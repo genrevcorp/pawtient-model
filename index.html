@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Pawtient AI — 把好產品，配上一樣扎實的商業模式</title>
+<meta property="og:title" content="Pawtient AI — 把好產品配上扎實的商業模式">
+<meta property="og:description" content="用一般人也懂的話，說清楚 Pawtient 的價值，以及我們怎麼把它的生意做得更穩。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f3ec; --paper-2:#efeae0; --ink:#1c1a17; --ink-soft:#56514a;
+    --hair:#d8d2c6; --accent:#0e5d52; --accent-2:#7a2e2e; --gold:#9a6b2e; --maxw:920px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;
+    line-height:1.78;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 20% -10%,rgba(14,93,82,.05),transparent 45%),radial-gradient(circle at 110% 10%,rgba(122,46,46,.04),transparent 40%);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .serif{font-family:"Fraunces","Noto Serif TC",serif}
+  .label{font-family:"Fraunces",serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  header.hero{padding:84px 0 50px;border-bottom:1px solid var(--hair)}
+  .tag{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--ink);border-radius:100px;padding:5px 14px;color:var(--ink)}
+  h1{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(36px,6.4vw,68px);line-height:1.05;letter-spacing:-.01em;margin:26px 0 20px}
+  h1 em{font-family:"Fraunces",serif;font-style:italic;font-weight:400;color:var(--accent)}
+  .dek{font-size:clamp(17px,2.2vw,22px);max-width:680px;color:var(--ink-soft);line-height:1.6;font-weight:300}
+  section{padding:60px 0;border-bottom:1px solid var(--hair)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:26px}
+  .sec-num{font-family:"Fraunces",serif;font-size:14px;color:var(--accent);font-weight:600;letter-spacing:.1em}
+  h2{font-family:"Noto Serif TC",serif;font-weight:700;font-size:clamp(24px,3.6vw,36px);line-height:1.15;margin:0;letter-spacing:-.01em}
+  .lead{font-size:19px;line-height:1.7;max-width:720px;font-weight:300}
+  .lead strong{font-weight:700;color:var(--accent-2)}
+  p{max-width:720px}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+  @media(max-width:720px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--paper-2);border:1px solid var(--hair);border-radius:10px;padding:26px}
+  .card .n{font-family:"Fraunces",serif;font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.06em}
+  .card h3{font-family:"Noto Serif TC",serif;font-size:20px;margin:8px 0 8px}
+  .card p{font-size:15px;color:var(--ink-soft);margin:0;line-height:1.65}
+
+  .moat{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--hair);border-radius:12px;overflow:hidden;margin-top:26px}
+  @media(max-width:720px){.moat{grid-template-columns:1fr}}
+  .moat>div{padding:28px}
+  .moat .vs{background:var(--paper-2)} .moat .us{background:var(--ink);color:var(--paper)}
+  .moat .kk{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
+  .moat .vs .kk{color:var(--accent-2)} .moat .us .kk{color:#8fd3c8}
+  .moat h4{font-family:"Noto Serif TC",serif;font-size:20px;margin:0 0 8px}
+  .moat p{font-size:14.5px;margin:0;opacity:.9;line-height:1.6}
+
+  .trip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+  @media(max-width:720px){.trip{grid-template-columns:1fr}}
+  .tc{border:1px solid var(--hair);border-radius:10px;padding:20px;background:#fff}
+  .tc .n{font-family:"Fraunces",serif;font-size:34px;font-weight:600;color:var(--accent);line-height:1}
+  .tc .m{font-family:"Noto Serif TC",serif;font-size:15.5px;font-weight:600;line-height:1.45;margin-top:8px}
+  .tg{border-left:3px solid var(--accent);padding:11px 16px;font-family:"Noto Serif TC",serif;font-size:17px;font-weight:600;background:var(--paper-2);border-radius:0 6px 6px 0;margin-bottom:10px}
+  .tg span{display:block;font-family:"Noto Sans TC",sans-serif;font-size:11.5px;font-weight:400;color:var(--ink-soft);margin-top:2px}
+
+  .steps{counter-reset:s;margin-top:14px}
+  .step{counter-increment:s;display:grid;grid-template-columns:54px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--hair)}
+  .step::before{content:counter(s);font-family:"Fraunces",serif;font-size:30px;color:var(--accent);font-weight:600;line-height:1}
+  .step h4{margin:0 0 3px;font-family:"Noto Serif TC",serif;font-size:18px}
+  .step p{margin:0;color:var(--ink-soft);font-size:15px}
+
+  .gloss{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:24px}
+  @media(max-width:720px){.gloss{grid-template-columns:1fr}}
+  .gloss .g{border-top:1px solid var(--hair);padding-top:12px}
+  .gloss .g b{font-family:"Noto Serif TC",serif;color:var(--accent);font-size:16px}
+  .gloss .g p{font-size:14px;color:var(--ink-soft);margin:4px 0 0}
+
+  footer{padding:46px 0 80px;color:var(--ink-soft);font-size:13.5px}
+  footer .label{margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Pawtient AI · 商業模式</span>
+    <h1>好產品，<br>要配上一樣<em>扎實的生意</em>。</h1>
+    <p class="dek">Pawtient 的產品是真本事——能把毛孩的血檢與病歷，整理成看得懂、還會提早預警的健康紀錄。這頁用一般人也懂的話，說清楚它的價值，以及我們正在怎麼把背後的生意做得更穩。</p>
+  </div>
+</header>
+
+<!-- 1 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>一句話：產品很強，商業模式要跟上</h2></div>
+    <p class="lead">產品這端，我們有真實效用，也累積了別人複製不了的寵物健康數據。<strong>真正要顧好的，是「每賣一單到底有沒有賺錢」這件事</strong>——因為訂閱裡含了 AI 功能，每用一次都有成本。把地基顧穩，再踩油門衝成長，才走得遠。</p>
+  </div>
+</section>
+
+<!-- 2 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>我們正在把這幾件事做好</h2></div>
+    <div class="cards">
+      <div class="card"><div class="n">誠實</div><h3>定價講清楚</h3><p>年訂的折扣標示，要跟你實際付的金額對得上。在一個靠信任的健康品牌，把話講清楚，比什麼都重要。</p></div>
+      <div class="card"><div class="n">健康</div><h3>確認每個方案都賺錢</h3><p>訂閱含 AI 功能、每次使用都有成本。我們會先確認：不會出現「用越多反而越虧」，把地基算清楚再成長。</p></div>
+      <div class="card"><div class="n">清晰</div><h3>用「結果」賣，不用「額度」賣</h3><p>顧客買的從來不是「20 次 AI」，而是「老狗的安心」「抓出獸醫沒看到的事」。方案用為誰而設、能換到什麼來命名。</p></div>
+      <div class="card"><div class="n">長期</div><h3>顧好回頭客</h3><p>訂閱生意的關鍵不是單月衝多少，而是客人留多久。我們把「回頭率」當成核心指標在追。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 護城河 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>真正的寶藏：一份會「記得」也會「預警」的健康紀錄</h2></div>
+    <p class="lead">別人提供一次性的血檢，是<strong>一張快照</strong>；Pawtient 累積的，是一部<strong>會預警的紀錄片</strong>。這份「9 種語言 × 64 項參數 × 長期累積」的數據，才是別人複製不了的護城河，也是未來和保險、獸醫合作的底氣。</p>
+    <div class="moat">
+      <div class="vs"><div class="kk">別人 · 一次性血檢</div><h4>一張快照</h4><p>今天數字正常 → 看起來沒事。看不到變化、看不到趨勢、看不到「還在正常範圍內就已開始下滑」的訊號。</p></div>
+      <div class="us"><div class="kk">Pawtient · 長期紀錄</div><h4>一部會預警的紀錄片</h4><p>每項參數每次都記得、都畫成趨勢線。當數字開始偏移，你在症狀出現之前就先收到提醒。</p></div>
+    </div>
+    <div class="trip">
+      <div class="tc"><div class="n">64</div><div class="m">「獸醫五分鐘看不完的 64 個數字，我們每次都記得。」</div></div>
+      <div class="tc"><div class="n">趨勢</div><div class="m">「健康不是快照，是趨勢線——提早幾個月看見變化。」</div></div>
+      <div class="tc"><div class="n">9</div><div class="m">「不管你說什麼語言，都讀得懂毛孩的身體。」</div></div>
+    </div>
+    <div style="margin-top:26px">
+      <div class="tg">獸醫看當下，我們看趨勢。<span>主標 · 一刀切中差異</span></div>
+      <div class="tg">在症狀出現之前，數據已經在說話。<span>情緒版 · 適合高齡犬貓</span></div>
+      <div class="tg">一份會記得、也會預警的健康紀錄。<span>產品定位版 · 取代「寵物 App」</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 順序 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>做事的順序：先顧地基，再踩油門</h2></div>
+    <div class="steps">
+      <div class="step"><div><h4>把定價講清楚</h4><p>折扣標示對得上實際金額、幣別標清楚。這是信任的底線，最優先。</p></div></div>
+      <div class="step"><div><h4>確認每個方案都賺錢</h4><p>把每個方案的成本算清楚，確定不會越賣越虧。這是成長的綠燈條件。</p></div></div>
+      <div class="step"><div><h4>把忠實顧客顧好</h4><p>用誠實、有感的年訂方案，照顧已經喜歡我們的人。</p></div></div>
+      <div class="step"><div><h4>把數據×合作變主線</h4><p>把寵物健康數據與保險、獸醫的合作，放進核心路線圖——這才是真正的天花板。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 小辭典 -->
+<section style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2>小辭典：把術語翻成人話</h2></div>
+    <div class="gloss">
+      <div class="g"><b>每賣一單賺不賺</b><p>賣出一個方案，扣掉服務這個客人的成本後，到底還剩多少。剩正的才是真的賺。</p></div>
+      <div class="g"><b>訂閱的成本</b><p>每次 AI 掃描、諮詢、整理，背後都有運算費用。用越多、成本越高，所以要先算清楚。</p></div>
+      <div class="g"><b>回頭率 / 流失率</b><p>客人續訂或退訂的比例。訂閱生意的命脈，比單月業績更重要。</p></div>
+      <div class="g"><b>護城河</b><p>別人短時間複製不了的優勢。我們的護城河，是長期累積的寵物健康數據。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="label">關於這頁</div>
+    <p style="max-width:720px">這是一份用一般人語言寫的商業模式說明，幫助團隊與夥伴快速理解 Pawtient 的價值與方向。內容為策略方向，非財務承諾。</p>
+    <p style="margin-top:16px;color:var(--ink)">Pawtient AI · 通用創新有限公司 · 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
