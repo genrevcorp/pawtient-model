@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Pawtient AI — 定價 × 客群 策略頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f3ec;--paper-2:#efeae0;--ink:#1c1a17;--ink-soft:#56514a;--hair:#d8d2c6;
+    --accent:#0e5d52;--accent-2:#7a2e2e;--gold:#9a6b2e;--red:#b0322b;--amber:#b9791f;--maxw:1040px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;
+    line-height:1.74;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 20% -10%,rgba(14,93,82,.05),transparent 45%),radial-gradient(circle at 110% 8%,rgba(122,46,46,.04),transparent 40%);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .serif{font-family:"Fraunces","Noto Serif TC",serif}
+  .label{font-family:"Fraunces",serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  header.hero{padding:80px 0 46px;border-bottom:1px solid var(--hair)}
+  .tag{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--ink);border-radius:100px;padding:5px 14px;color:var(--ink)}
+  h1{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-.01em;margin:24px 0 18px}
+  h1 em{font-family:"Fraunces",serif;font-style:italic;font-weight:400;color:var(--accent)}
+  .dek{font-size:clamp(17px,2.1vw,21px);max-width:680px;color:var(--ink-soft);font-weight:300;line-height:1.6}
+  section{padding:58px 0;border-bottom:1px solid var(--hair)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:24px}
+  .sec-num{font-family:"Fraunces",serif;font-size:14px;color:var(--accent);font-weight:600;letter-spacing:.1em}
+  h2{font-family:"Noto Serif TC",serif;font-weight:700;font-size:clamp(23px,3.4vw,34px);line-height:1.15;margin:0;letter-spacing:-.01em}
+  .lead{font-size:18px;line-height:1.7;max-width:760px;font-weight:300}
+  .lead strong{font-weight:700;color:var(--accent-2)}
+  p{max-width:760px}
+
+  table{width:100%;border-collapse:collapse;margin:22px 0 0;font-size:14.5px}
+  th,td{text-align:left;padding:12px 13px;border-bottom:1px solid var(--hair)}
+  th{font-family:"Fraunces",serif;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  td b{font-family:"Fraunces",serif}
+  tr.hl td{background:var(--paper-2)}
+  .who-tag{color:var(--accent);font-weight:700}
+
+  .lens{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+  @media(max-width:760px){.lens{grid-template-columns:1fr}}
+  .lcard{border:1px solid var(--hair);border-radius:11px;padding:28px;background:#fff}
+  .lcard.ceo{background:var(--ink);color:var(--paper)}
+  .lcard .k{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:10px}
+  .lcard.ceo .k{color:#8fd3c8}.lcard.coo .k{color:var(--accent-2)}
+  .lcard h3{font-family:"Noto Serif TC",serif;font-size:21px;margin:0 0 14px}
+  .lcard ul{margin:0;padding:0;list-style:none}
+  .lcard li{position:relative;padding-left:22px;margin-bottom:12px;font-size:15px;line-height:1.6}
+  .lcard li::before{content:"";position:absolute;left:3px;top:10px;width:7px;height:7px;background:var(--accent);transform:rotate(45deg)}
+  .lcard.ceo li::before{background:#8fd3c8}
+  .lcard b{color:var(--accent)}.lcard.ceo b{color:#fff}
+
+  .punch{border-left:3px solid var(--accent);padding:14px 18px;background:var(--paper-2);border-radius:0 8px 8px 0;font-family:"Noto Serif TC",serif;font-size:18px;font-weight:600;margin-top:24px}
+
+  .coonote{margin-top:22px;font-size:14px;color:var(--ink);border-left:3px solid var(--amber);padding:10px 14px;background:rgba(185,121,31,.07);border-radius:0 6px 6px 0}
+
+  /* segment cards */
+  .tier{margin-top:8px}
+  .tierhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:34px 0 4px;padding-top:26px;border-top:1px solid var(--hair)}
+  .tierhead:first-of-type{border-top:none;padding-top:0}
+  .tierhead .nm{font-family:"Noto Serif TC",serif;font-weight:700;font-size:23px}
+  .tierhead .pr{font-family:"Fraunces",serif;font-size:18px;color:var(--accent);font-weight:600}
+  .tierhead .for{font-size:13px;color:var(--ink-soft)}
+  .copy{border-left:3px solid var(--accent);padding:8px 16px;margin:14px 0;font-family:"Noto Serif TC",serif;font-size:18px;font-weight:600;background:#fff;border-radius:0 6px 6px 0}
+  .copy span{display:block;font-family:"Noto Sans TC",sans-serif;font-size:12px;font-weight:400;color:var(--ink-soft);margin-top:3px}
+  .segs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+  @media(max-width:760px){.segs{grid-template-columns:1fr}}
+  .seg{border:1px solid var(--hair);border-radius:10px;padding:20px;background:var(--paper-2)}
+  .seg .st{font-family:"Noto Serif TC",serif;font-weight:700;font-size:17px;color:var(--accent)}
+  .seg .sw{font-size:13.5px;color:var(--ink-soft);margin:6px 0 10px}
+  .seg .sc{font-family:"Noto Serif TC",serif;font-size:15px;font-weight:600;line-height:1.5;border-top:1px dashed var(--hair);padding-top:10px}
+  .seg .sc::before{content:"“";color:var(--accent)}.seg .sc::after{content:"”";color:var(--accent)}
+
+  .rec{background:var(--ink);color:var(--paper);border-radius:10px;padding:40px 36px;margin-top:8px}
+  .rec .label{color:#8fd3c8}
+  .rec h3{font-family:"Noto Serif TC",serif;font-size:24px;margin:12px 0 14px;color:#fff}
+  .rec p{color:#d8d2c6;max-width:760px}
+  .rec b{color:#fff}
+
+  footer{padding:42px 0 80px;color:var(--ink-soft);font-size:13px}
+  footer .label{margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Pawtient AI · 定價策略</span>
+    <h1>同一套定價，<br>其實在賣<em>三種不同的人</em>。</h1>
+    <p class="dek">用 CEO（賣給誰、怎麼長大）與 COO（怎麼服務、怎麼賺）兩個角度，把你目前的三層定價拆清楚，並針對每個客群寫好可直接用的文案。</p>
+  </div>
+</header>
+
+<!-- 01 定價攤平 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>你目前的定價（攤平）</h2></div>
+    <table>
+      <thead><tr><th>方案</th><th>月費</th><th>年費</th><th>掃描</th><th>AI 諮詢</th><th>摘要</th><th>轉錄</th><th>共用者</th><th>像在賣給誰</th></tr></thead>
+      <tbody>
+        <tr><td><b>Free</b></td><td>NT$0</td><td>—</td><td>2</td><td>2</td><td>—</td><td>—</td><td>2/寵物</td><td class="who-tag">還在觀望的人</td></tr>
+        <tr class="hl"><td><b>Premium</b></td><td>NT$190</td><td>NT$1,990</td><td>6</td><td>20</td><td>8</td><td>20 分</td><td>2/寵物</td><td class="who-tag">一個人、一隻毛孩</td></tr>
+        <tr class="hl"><td><b>Family</b></td><td>NT$390</td><td>NT$3,990</td><td>20</td><td>60</td><td>25</td><td>60 分</td><td><b>10/寵物（5 編輯）</b></td><td class="who-tag">多隻 ＋ 多人協作</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 02 CEO / COO -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>CEO 與 COO，兩個角度</h2></div>
+    <div class="lens">
+      <div class="lcard ceo">
+        <div class="k">CEO 視角 · 賣給誰、怎麼長大</div>
+        <h3>你在賣的是三種身分</h3>
+        <ul>
+          <li><b style="color:#fff">Free＝獲客與數據層。</b>用「拍血檢秒解讀」勾人進來，順便累積你最值錢的健康數據。不為賺錢，為養池子。</li>
+          <li><b style="color:#fff">Premium＝個人的深度照護。</b>賣「把最在乎的那一隻顧到底」，尤其高齡、慢性病毛孩。這是現金主力。</li>
+          <li><b style="color:#fff">Family＝表面多寵家庭，骨子裡是團隊／機構方案。</b>關鍵是「10 共用者／5 編輯者」——會需要多人管多隻的，是寵物店、中途、繁殖者、小診所。</li>
+        </ul>
+      </div>
+      <div class="lcard coo">
+        <div class="k">COO 視角 · 怎麼服務、怎麼賺</div>
+        <h3>每層的成本與營運重點</h3>
+        <ul>
+          <li><b>Free</b>：額度小、可控；重點是防多帳號薅羊毛、把「第一次哇」做到位。</li>
+          <li><b>Premium</b>：20 AI＋20 分轉錄，中等成本；顧好單寵長期留存（高齡犬貓會用很久）。</li>
+          <li><b>Family</b>：60 AI＋25 摘要＝最重成本，10 席協作＝高支援、但高黏著高 LTV。要做席次／動物數的用量管理。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="punch">一句話：Free 養數據、Premium 收個人現金、Family 是你偷偷長出來的 B2B 入口。</div>
+    <div class="coonote"><b>COO 順手提醒：</b>年付都標「省 17%」，但實算 Premium 只省約 12.7%、Family 約 14.7%——標示再對一下實際數字，健康品牌別讓人抓到對不上。</div>
+  </div>
+</section>
+
+<!-- 03 客群 + 文案 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>三層 × 客群 ＋ 針對性文案</h2></div>
+
+    <div class="tier">
+      <div class="tierhead"><span class="nm">Free</span><span class="pr">NT$0</span><span class="for">· 還在觀望、單一健康寵物的飼主</span></div>
+      <div class="copy">先免費拍一張血檢，30 秒看懂牠的數字。<span>獲客 Hook · 把「魔法時刻」當誘餌</span></div>
+    </div>
+
+    <div class="tier">
+      <div class="tierhead"><span class="nm">Premium</span><span class="pr">NT$190 / 月</span><span class="for">· 個人 · 單寵深度照護（高齡 / 慢性病優先）</span></div>
+      <div class="copy">給最在乎的那一隻，一份會記得、也會預警的健康紀錄。<span>主文案 · 一刀切中「一個人一隻毛孩」</span></div>
+      <div class="copy">牠進入老年了——從今天起，每個數字都不漏接。<span>高齡向 · 適合 7 歲以上犬貓</span></div>
+    </div>
+
+    <div class="tier">
+      <div class="tierhead"><span class="nm">Family</span><span class="pr">NT$390 / 月</span><span class="for">· 多隻 × 多人協作（10 共用者 / 5 編輯者）</span></div>
+      <p style="font-size:15px;color:var(--ink-soft);margin:8px 0 4px">一個方案、五種客群——核心賣點都是「一個帳號管很多隻、多人一起顧」。</p>
+      <div class="segs">
+        <div class="seg"><div class="st">多寵家庭</div><div class="sw">家裡 2 隻以上貓狗，全家一起照顧。</div><div class="sc" >一家多毛孩，一個帳號全顧到；爸媽一起編輯、一起收到提醒。</div></div>
+        <div class="seg"><div class="st">寵物店 / 旅館 / 美容 / 日照</div><div class="sw">替寄養與客戶的寵物留紀錄、多員工交班。</div><div class="sc">每隻寄宿毛孩都有健康履歷，交班不漏接——讓客戶更放心交給你。</div></div>
+        <div class="seg"><div class="st">中途 / 救援 / 收容</div><div class="sw">同時照顧多隻、志工輪班、要把病史交給認養人。</div><div class="sc">多隻、多志工、一份完整病史——送養時，連健康趨勢一起交給新家。</div></div>
+        <div class="seg"><div class="st">繁殖者 / 貓舍犬舍</div><div class="sw">管理多隻種公種母與幼崽的健康。</div><div class="sc">每一隻的血檢趨勢都留底，配種與健康管理更專業。</div></div>
+        <div class="seg" style="grid-column:1/-1"><div class="st">小型動物醫院 / 獸醫助理</div><div class="sw">想用輕量工具替回診病患整理縱向數據。</div><div class="sc">把每隻病患的歷次血檢自動連成趨勢線，回診前 30 秒掌握全貌。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 建議 -->
+<section style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>一個策略建議</h2></div>
+    <div class="rec">
+      <div class="label">把偷偷長出來的 B2B，正式變成一條產品線</div>
+      <h3>從 Family 拆出「商用 / 機構版」</h3>
+      <p>Family 的「<b>10 共用者 / 5 編輯者</b>」其實是團隊功能。建議下一步把這群商用客群（寵物店、中途、繁殖者、小診所）<b>獨立出來</b>，做一個按<b>席次</b>或<b>動物數</b>計價的「商用／機構版」——向 B2B 收更高的價值，也讓 Family 回歸「純多寵家庭」、定位更乾淨。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="label">關於這頁</div>
+    <p style="max-width:760px">本頁為內部定價與客群策略整理，價格與額度依 2026.06 App 畫面。文案為建議草稿，可依品牌語氣調整。</p>
+    <p style="margin-top:14px;color:var(--ink)">Pawtient AI · 通用創新有限公司 · 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
