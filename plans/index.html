@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pawtient AI — 方案與訂閱</title>
+<meta property="og:title" content="Pawtient AI — 選一個適合你的照護方案">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FEF9F1;--surface:#fff;--ink:#241c20;--soft:#6e5c66;--faint:#9c8b95;
+    --rose:#D47FA6;--rose-deep:#A8517D;--rose-ink:#8C3E66;--rose-wash:#F7E9F0;--rose-line:#ebd3df;
+    --green:#2f7d6e;--line:#ece1da;--maxw:1120px;
+    --serif:"Fraunces","Noto Serif TC",serif;--sans:"Noto Sans TC","PingFang TC",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 15% -8%,rgba(212,127,166,.07),transparent 42%),radial-gradient(circle at 108% 6%,rgba(140,62,102,.05),transparent 40%);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  header.hero{text-align:center;padding:70px 0 36px}
+  .eyebrow{font-family:var(--serif);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--rose-deep);font-weight:600;margin-bottom:18px}
+  h1{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(32px,5.4vw,54px);line-height:1.08;letter-spacing:-.01em}
+  h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--rose-ink)}
+  .sub{color:var(--soft);font-size:clamp(15px,1.8vw,19px);margin-top:16px;max-width:540px;margin-left:auto;margin-right:auto;font-weight:300}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:24px 0 70px;align-items:start}
+  @media(max-width:880px){.grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
+  .plan{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column;
+    box-shadow:0 1px 2px rgba(60,30,45,.03),0 18px 50px -34px rgba(60,30,45,.3)}
+  .plan.feat{border:2px solid var(--rose);box-shadow:0 26px 60px -30px rgba(140,62,102,.32);position:relative}
+  .ribbon{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--rose-ink);color:#fff;
+    font-size:12px;font-weight:700;letter-spacing:.08em;padding:5px 16px;border-radius:99px;white-space:nowrap}
+  .pname{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.04em;color:var(--rose-deep)}
+  .ptitle{font-family:"Noto Serif TC",serif;font-weight:700;font-size:25px;margin-top:2px}
+  .ptag{font-size:14.5px;color:var(--soft);margin-top:8px;min-height:44px;line-height:1.5}
+  .price{margin-top:18px;display:flex;align-items:baseline;gap:6px}
+  .price .big{font-family:var(--serif);font-weight:600;font-size:42px;line-height:1;color:var(--ink)}
+  .price .per{font-size:14px;color:var(--faint)}
+  .annual{font-size:13px;color:var(--green);font-weight:700;margin-top:7px;min-height:20px}
+  .annual .save{background:rgba(47,125,110,.1);border-radius:5px;padding:2px 7px}
+  .cta{display:block;text-align:center;margin:20px 0 4px;padding:13px;border-radius:12px;font-weight:700;font-size:15px;
+    text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);transition:.15s}
+  .cta:hover{background:var(--ink);color:var(--paper)}
+  .plan.feat .cta{background:var(--rose-ink);border-color:var(--rose-ink);color:#fff}
+  .plan.feat .cta:hover{background:var(--rose-deep)}
+
+  .fit{background:var(--rose-wash);border:1px solid var(--rose-line);border-radius:12px;padding:14px 16px;margin-top:20px}
+  .fit .ft{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--rose-deep);text-transform:uppercase}
+  .fit p{font-size:14px;color:var(--ink);margin-top:5px;line-height:1.55}
+  .enough{font-size:13px;color:var(--faint);margin:16px 0 8px;font-weight:700;letter-spacing:.04em}
+
+  ul.feats{list-style:none;margin-top:4px}
+  ul.feats li{display:grid;grid-template-columns:20px 1fr;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14.5px;align-items:start}
+  ul.feats li:last-child{border-bottom:none}
+  ul.feats .ck{color:var(--rose-deep);font-weight:800;margin-top:1px}
+  ul.feats b{font-weight:700}
+  ul.feats .hint{display:block;font-size:12.5px;color:var(--faint);margin-top:1px;line-height:1.45}
+  .plusline{font-size:13px;color:var(--soft);font-weight:700;margin:6px 0 2px;display:flex;align-items:center;gap:8px}
+  .plusline::before{content:"✦";color:var(--rose)}
+
+  .note{text-align:center;color:var(--faint);font-size:13px;padding:0 0 60px;max-width:640px;margin:0 auto}
+  .note a{color:var(--rose-deep)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Pawtient AI · 方案與訂閱</div>
+    <h1>選一個，<em>剛好適合你</em>的照護方案。</h1>
+    <p class="sub">不用算次數——直接看「適合誰、夠做什麼」，選那個像你的就對了。</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+
+    <!-- FREE -->
+    <div class="plan">
+      <div class="pname">序章 · Free</div>
+      <div class="ptitle">免費版</div>
+      <div class="ptag">先讀懂牠，再決定一切。</div>
+      <div class="price"><span class="big">NT$0</span><span class="per">/ 月</span></div>
+      <div class="annual">永久免費・無時間限制</div>
+      <a class="cta" href="#">免費開始</a>
+
+      <div class="fit"><div class="ft">適合</div><p>剛開始、想先認識毛孩健康的你；家有 1 隻大致健康的寵物。</p></div>
+
+      <div class="enough">這些額度，夠你：</div>
+      <ul class="feats">
+        <li><span class="ck">✓</span><div><b>2 次血檢掃描 / 月</b><span class="hint">一隻一年只做 1–2 次例行血檢，綽綽有餘</span></div></li>
+        <li><span class="ck">✓</span><div><b>2 次 AI 健康諮詢 / 月</b><span class="hint">體驗「拍血檢、30 秒秒懂」的魔法</span></div></li>
+        <li><span class="ck">✓</span><div>2 位共用者 / 寵物</div></li>
+      </ul>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="plan feat">
+      <span class="ribbon">最受歡迎 · 個人首選</span>
+      <div class="pname">摯愛 · Premium</div>
+      <div class="ptitle">Premium</div>
+      <div class="ptag">給那一隻，最完整的健康守護。</div>
+      <div class="price"><span class="big">NT$190</span><span class="per">/ 月</span></div>
+      <div class="annual">年訂 NT$1,990　<span class="save">省 NT$290 · 約 1.5 個月免費</span></div>
+      <a class="cta" href="#">升級 Premium</a>
+
+      <div class="fit"><div class="ft">適合</div><p><b>個人飼主</b>——尤其是<b>慢性病照護者</b>（腎臟、心臟、糖尿、甲狀腺）與<b>高齡毛孩</b>的主人。</p></div>
+
+      <div class="plusline">一隻毛孩、長期追蹤，這個就夠</div>
+      <ul class="feats">
+        <li><span class="ck">✓</span><div><b>6 次血檢掃描 / 月</b><span class="hint">慢性病每次回診的報告都能數位化、連成趨勢線（一隻通常 1–2 個月一次）</span></div></li>
+        <li><span class="ck">✓</span><div><b>20 次 AI 諮詢 / 月</b><span class="hint">幾乎天天都能問「今天數字要注意什麼」</span></div></li>
+        <li><span class="ck">✓</span><div><b>8 份看診摘要 / 月</b><span class="hint">一個月看診 1–2 次，每次都整理好</span></div></li>
+        <li><span class="ck">✓</span><div><b>20 分鐘看診轉錄 / 月</b></div></li>
+        <li><span class="ck">✓</span><div>優先客服支援</div></li>
+      </ul>
+    </div>
+
+    <!-- FAMILY -->
+    <div class="plan">
+      <div class="pname">全員 · Family</div>
+      <div class="ptitle">Family</div>
+      <div class="ptag">多隻毛孩、多人協作，一起守護。</div>
+      <div class="price"><span class="big">NT$390</span><span class="per">/ 月</span></div>
+      <div class="annual">年訂 NT$3,990　<span class="save">省 NT$690 · 約 2 個月免費</span></div>
+      <a class="cta" href="#">升級 Family</a>
+
+      <div class="fit"><div class="ft">適合</div><p><b>多寵家庭（2 隻以上）</b>，以及<b>寵物店、旅館、中途、繁殖者、小型診所</b>——要照顧很多隻、又需要多人協作的人。</p></div>
+
+      <div class="plusline">很多隻、很多人，一個帳號全顧到（約 3–5 隻）</div>
+      <ul class="feats">
+        <li><span class="ck">✓</span><div><b>20 次血檢掃描 / 月</b><span class="hint">幾隻寵物每月各追蹤一次都夠</span></div></li>
+        <li><span class="ck">✓</span><div><b>60 次 AI 諮詢 / 月</b><span class="hint">多隻、多人一起問也用不完</span></div></li>
+        <li><span class="ck">✓</span><div><b>25 份看診摘要 + 60 分鐘轉錄 / 月</b><span class="hint">多隻同時就醫也接得住</span></div></li>
+        <li><span class="ck">✓</span><div><b>10 位共用者（含 5 位編輯）</b><span class="hint">全家或整個團隊看同一份紀錄、一起更新</span></div></li>
+        <li><span class="ck">✓</span><div>優先客服支援</div></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="note">年訂可享免費月數，隨時可在帳戶設定切換或取消。價格為新台幣（NT$）。<br>不確定選哪個？多數「一隻毛孩」的飼主選 Premium；「多隻或多人照顧」選 Family。</p>
+</div>
+
+</body>
+</html>
