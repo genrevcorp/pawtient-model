@@ -3,163 +3,928 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>Pawtient AI — 把好產品，配上一樣扎實的商業模式</title>
-<meta property="og:title" content="Pawtient AI — 把好產品配上扎實的商業模式">
-<meta property="og:description" content="用一般人也懂的話，說清楚 Pawtient 的價值，以及我們怎麼把它的生意做得更穩。">
+<title>Pawtient AI — 商業模型體檢報告</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#f6f3ec; --paper-2:#efeae0; --ink:#1c1a17; --ink-soft:#56514a;
-    --hair:#d8d2c6; --accent:#0e5d52; --accent-2:#7a2e2e; --gold:#9a6b2e; --maxw:920px;
+    --paper:#f6f3ec;
+    --paper-2:#efeae0;
+    --ink:#1c1a17;
+    --ink-soft:#56514a;
+    --hair:#d8d2c6;
+    --accent:#0e5d52;      /* deep teal */
+    --accent-2:#7a2e2e;    /* oxblood */
+    --gold:#9a6b2e;
+    --red:#b0322b;
+    --amber:#b9791f;
+    --yellow:#9a8a2e;
+    --maxw:1080px;
   }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;
-    line-height:1.78;-webkit-font-smoothing:antialiased;
-    background-image:radial-gradient(circle at 20% -10%,rgba(14,93,82,.05),transparent 45%),radial-gradient(circle at 110% 10%,rgba(122,46,46,.04),transparent 40%);}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
-  .serif{font-family:"Fraunces","Noto Serif TC",serif}
-  .label{font-family:"Fraunces",serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);font-weight:600}
-  header.hero{padding:84px 0 50px;border-bottom:1px solid var(--hair)}
-  .tag{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--ink);border-radius:100px;padding:5px 14px;color:var(--ink)}
-  h1{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(36px,6.4vw,68px);line-height:1.05;letter-spacing:-.01em;margin:26px 0 20px}
-  h1 em{font-family:"Fraunces",serif;font-style:italic;font-weight:400;color:var(--accent)}
-  .dek{font-size:clamp(17px,2.2vw,22px);max-width:680px;color:var(--ink-soft);line-height:1.6;font-weight:300}
-  section{padding:60px 0;border-bottom:1px solid var(--hair)}
-  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:26px}
-  .sec-num{font-family:"Fraunces",serif;font-size:14px;color:var(--accent);font-weight:600;letter-spacing:.1em}
-  h2{font-family:"Noto Serif TC",serif;font-weight:700;font-size:clamp(24px,3.6vw,36px);line-height:1.15;margin:0;letter-spacing:-.01em}
-  .lead{font-size:19px;line-height:1.7;max-width:720px;font-weight:300}
-  .lead strong{font-weight:700;color:var(--accent-2)}
-  p{max-width:720px}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans TC",system-ui,sans-serif;
+    font-weight:400;line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 20% -10%, rgba(14,93,82,.05), transparent 45%),radial-gradient(circle at 110% 10%, rgba(122,46,46,.04), transparent 40%);
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .serif{font-family:"Fraunces","Noto Serif TC",serif;}
+  .label{font-family:"Fraunces",serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:600;}
 
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
-  @media(max-width:720px){.cards{grid-template-columns:1fr}}
-  .card{background:var(--paper-2);border:1px solid var(--hair);border-radius:10px;padding:26px}
-  .card .n{font-family:"Fraunces",serif;font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.06em}
-  .card h3{font-family:"Noto Serif TC",serif;font-size:20px;margin:8px 0 8px}
-  .card p{font-size:15px;color:var(--ink-soft);margin:0;line-height:1.65}
+  /* ---------- HERO ---------- */
+  header.hero{padding:88px 0 56px;border-bottom:1px solid var(--hair);}
+  .hero .kicker{display:flex;gap:14px;align-items:center;margin-bottom:30px;}
+  .tag{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;border:1px solid var(--ink);border-radius:100px;padding:5px 14px;color:var(--ink);}
+  .tag.conf{background:var(--ink);color:var(--paper);}
+  h1{font-family:"Noto Serif TC","Fraunces",serif;font-weight:900;font-size:clamp(40px,7vw,76px);line-height:1.02;letter-spacing:-.01em;margin:0 0 22px;}
+  h1 em{font-family:"Fraunces",serif;font-style:italic;font-weight:400;color:var(--accent);}
+  .dek{font-size:clamp(18px,2.4vw,23px);max-width:760px;color:var(--ink-soft);line-height:1.6;font-weight:300;}
+  .meta-row{display:flex;flex-wrap:wrap;gap:34px;margin-top:40px;padding-top:26px;border-top:1px solid var(--hair);}
+  .meta-row div{font-size:13px;color:var(--ink-soft);}
+  .meta-row b{display:block;font-family:"Fraunces",serif;font-size:19px;color:var(--ink);font-weight:600;margin-top:3px;}
 
-  .moat{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--hair);border-radius:12px;overflow:hidden;margin-top:26px}
-  @media(max-width:720px){.moat{grid-template-columns:1fr}}
-  .moat>div{padding:28px}
-  .moat .vs{background:var(--paper-2)} .moat .us{background:var(--ink);color:var(--paper)}
-  .moat .kk{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
-  .moat .vs .kk{color:var(--accent-2)} .moat .us .kk{color:#8fd3c8}
-  .moat h4{font-family:"Noto Serif TC",serif;font-size:20px;margin:0 0 8px}
-  .moat p{font-size:14.5px;margin:0;opacity:.9;line-height:1.6}
+  /* ---------- VERDICT ---------- */
+  section{padding:72px 0;border-bottom:1px solid var(--hair);}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:38px;}
+  .sec-num{font-family:"Fraunces",serif;font-size:14px;color:var(--accent);font-weight:600;letter-spacing:.1em;}
+  h2{font-family:"Noto Serif TC",serif;font-weight:700;font-size:clamp(26px,4vw,40px);line-height:1.12;margin:0;letter-spacing:-.01em;}
+  .lead{font-size:20px;line-height:1.7;max-width:780px;font-weight:300;color:var(--ink);}
+  .lead strong{font-weight:700;color:var(--accent-2);}
 
-  .trip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
-  @media(max-width:720px){.trip{grid-template-columns:1fr}}
-  .tc{border:1px solid var(--hair);border-radius:10px;padding:20px;background:#fff}
-  .tc .n{font-family:"Fraunces",serif;font-size:34px;font-weight:600;color:var(--accent);line-height:1}
-  .tc .m{font-family:"Noto Serif TC",serif;font-size:15.5px;font-weight:600;line-height:1.45;margin-top:8px}
-  .tg{border-left:3px solid var(--accent);padding:11px 16px;font-family:"Noto Serif TC",serif;font-size:17px;font-weight:600;background:var(--paper-2);border-radius:0 6px 6px 0;margin-bottom:10px}
-  .tg span{display:block;font-family:"Noto Sans TC",sans-serif;font-size:11.5px;font-weight:400;color:var(--ink-soft);margin-top:2px}
+  .verdict-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;margin-top:46px;align-items:start;}
+  .verdict-card{background:var(--paper-2);border:1px solid var(--hair);border-radius:6px;padding:34px;}
+  .verdict-card h3{font-family:"Noto Serif TC",serif;margin:0 0 14px;font-size:20px;}
+  .score{font-family:"Fraunces",serif;font-size:74px;font-weight:600;line-height:1;color:var(--accent);}
+  .score small{font-size:24px;color:var(--ink-soft);}
+  .bar{height:8px;background:var(--hair);border-radius:99px;overflow:hidden;margin:18px 0 8px;}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--amber),var(--accent));}
+  .twocol{columns:2;column-gap:34px;font-size:15px;color:var(--ink-soft);}
+  @media(max-width:760px){.verdict-grid{grid-template-columns:1fr;}.twocol{columns:1;}}
 
-  .steps{counter-reset:s;margin-top:14px}
-  .step{counter-increment:s;display:grid;grid-template-columns:54px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--hair)}
-  .step::before{content:counter(s);font-family:"Fraunces",serif;font-size:30px;color:var(--accent);font-weight:600;line-height:1}
-  .step h4{margin:0 0 3px;font-family:"Noto Serif TC",serif;font-size:18px}
-  .step p{margin:0;color:var(--ink-soft);font-size:15px}
+  /* ---------- ISSUES ---------- */
+  .issue{display:grid;grid-template-columns:46px 1fr;gap:22px;padding:26px 0;border-top:1px solid var(--hair);}
+  .issue:first-of-type{border-top:none;}
+  .dot{width:14px;height:14px;border-radius:50%;margin-top:9px;}
+  .sev-crit{background:var(--red);box-shadow:0 0 0 5px rgba(176,50,43,.13);}
+  .sev-high{background:var(--amber);box-shadow:0 0 0 5px rgba(185,121,31,.13);}
+  .sev-watch{background:var(--yellow);box-shadow:0 0 0 5px rgba(154,138,46,.13);}
+  .issue h4{font-family:"Noto Serif TC",serif;font-size:21px;margin:0 0 6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .sev-pill{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:3px 9px;border-radius:4px;font-weight:600;}
+  .pill-crit{background:rgba(176,50,43,.12);color:var(--red);}
+  .pill-high{background:rgba(185,121,31,.14);color:var(--amber);}
+  .pill-watch{background:rgba(154,138,46,.16);color:var(--yellow);}
+  .issue p{margin:6px 0 0;color:var(--ink-soft);font-size:16px;max-width:760px;}
+  .issue .fix{margin-top:12px;font-size:15px;color:var(--ink);border-left:3px solid var(--accent);padding-left:14px;}
+  .issue .fix b{color:var(--accent);}
 
-  .gloss{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:24px}
-  @media(max-width:720px){.gloss{grid-template-columns:1fr}}
-  .gloss .g{border-top:1px solid var(--hair);padding-top:12px}
-  .gloss .g b{font-family:"Noto Serif TC",serif;color:var(--accent);font-size:16px}
-  .gloss .g p{font-size:14px;color:var(--ink-soft);margin:4px 0 0}
+  /* ---------- TABLES ---------- */
+  table{width:100%;border-collapse:collapse;margin:30px 0;font-size:15px;}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--hair);}
+  th{font-family:"Fraunces",serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
+  td b{font-family:"Fraunces",serif;}
+  .good{color:var(--accent);font-weight:600;}
+  .bad{color:var(--red);font-weight:600;}
+  tr.hl td{background:var(--paper-2);}
+  caption{caption-side:bottom;text-align:left;font-size:13px;color:var(--ink-soft);padding-top:12px;font-style:italic;}
 
-  footer{padding:46px 0 80px;color:var(--ink-soft);font-size:13.5px}
-  footer .label{margin-bottom:10px}
+  /* ---------- PERSONAS ---------- */
+  .persona{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:46px 0;border-top:1px solid var(--hair);}
+  .persona:first-of-type{border-top:none;}
+  .mono{width:120px;height:120px;border-radius:50%;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-size:46px;font-weight:500;color:var(--ink);background:var(--paper-2);}
+  .persona .who{margin-top:18px;}
+  .persona .who .nm{font-family:"Noto Serif TC",serif;font-weight:700;font-size:21px;}
+  .persona .who .rl{font-size:13px;color:var(--accent);letter-spacing:.08em;margin-top:2px;}
+  .persona .who .lens{font-size:12.5px;color:var(--ink-soft);margin-top:8px;}
+  .quote{font-family:"Fraunces",serif;font-style:italic;font-size:clamp(20px,2.6vw,26px);line-height:1.42;color:var(--ink);margin:0 0 22px;font-weight:400;}
+  .quote::before{content:"“";color:var(--accent);font-size:1.1em;}
+  .quote::after{content:"”";color:var(--accent);}
+  .persona ul{margin:0;padding:0;list-style:none;}
+  .persona li{position:relative;padding-left:26px;margin-bottom:13px;font-size:16px;color:var(--ink);line-height:1.6;}
+  .persona li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;background:var(--accent);transform:rotate(45deg);}
+  .persona li b{color:var(--accent-2);}
+  @media(max-width:720px){.persona{grid-template-columns:1fr;gap:18px;}.mono{width:84px;height:84px;font-size:34px;}}
+
+  /* ---------- SEQUENCING ---------- */
+  .steps{counter-reset:s;margin-top:20px;}
+  .step{counter-increment:s;display:grid;grid-template-columns:60px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--hair);}
+  .step::before{content:counter(s);font-family:"Fraunces",serif;font-size:34px;color:var(--accent);font-weight:600;line-height:1;}
+  .step h4{margin:0 0 4px;font-family:"Noto Serif TC",serif;font-size:19px;}
+  .step .when{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2);}
+  .step p{margin:5px 0 0;color:var(--ink-soft);font-size:15px;}
+
+  /* ---------- NUMBERS WE NEED ---------- */
+  .need{background:var(--ink);color:var(--paper);border-radius:8px;padding:46px 40px;margin-top:20px;}
+  .need .label{color:#a7d8cf;}
+  .need h3{font-family:"Noto Serif TC",serif;font-size:26px;margin:14px 0 26px;color:#fff;}
+  .need-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .need-grid .n{border-top:2px solid var(--accent);padding-top:14px;}
+  .need-grid .n b{font-family:"Fraunces",serif;font-size:30px;color:#fff;display:block;}
+  .need-grid .n span{font-size:14px;color:#c9c3b8;}
+  @media(max-width:680px){.need-grid{grid-template-columns:1fr;}}
+
+  footer{padding:54px 0 90px;color:var(--ink-soft);font-size:13.5px;}
+  footer .label{margin-bottom:10px;}
+  a{color:var(--accent);}
+  .disc{max-width:740px;}
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="wrap">
-    <span class="tag">Pawtient AI · 商業模式</span>
-    <h1>好產品，<br>要配上一樣<em>扎實的生意</em>。</h1>
-    <p class="dek">Pawtient 的產品是真本事——能把毛孩的血檢與病歷，整理成看得懂、還會提早預警的健康紀錄。這頁用一般人也懂的話，說清楚它的價值，以及我們正在怎麼把背後的生意做得更穩。</p>
+    <div class="kicker">
+      <span class="tag conf">顧問機密 · Confidential</span>
+      <span class="tag">商業模型體檢</span>
+    </div>
+    <h1>Pawtient AI 的<br>商業模型，<em>哪裡漏了？</em></h1>
+    <p class="dek">一份強壯的資產，架在一具還沒驗證的商業底盤上。產品有真實效用、有數據護城河——但定價誠信、單位經濟學與 SKU 結構，正在悄悄吃掉它的價值。</p>
+    <div class="meta-row">
+      <div>標的<b>Pawtient AI</b></div>
+      <div>基數<b>~1,000 活躍用戶</b></div>
+      <div>資產<b>64 血檢參數 · 9 語言</b></div>
+      <div>當前目標<b>單月衝刺 NT$500K</b></div>
+      <div>體檢日<b>2026.06</b></div>
+    </div>
   </div>
 </header>
 
-<!-- 1 -->
-<section>
+<!-- VERDICT -->
+<section id="verdict">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">01</span><h2>一句話：產品很強，商業模式要跟上</h2></div>
-    <p class="lead">產品這端，我們有真實效用，也累積了別人複製不了的寵物健康數據。<strong>真正要顧好的，是「每賣一單到底有沒有賺錢」這件事</strong>——因為訂閱裡含了 AI 功能，每用一次都有成本。把地基顧穩，再踩油門衝成長，才走得遠。</p>
+    <div class="sec-head"><span class="sec-num">00</span><h2>一句話判斷</h2></div>
+    <p class="lead">產品端是 <strong>A 級資產</strong>（縱向血檢數據 + AI 獸醫摘要 + 保險通路想像），商業端是 <strong>C 級底盤</strong>。最大的危險不是「賣不夠」，而是<strong>你可能不知道自己每賣一單是賺是賠</strong>——訂閱裡塞了計量 AI，重度用戶的成本可能吃掉月費。先修底盤，再踩油門。</p>
+
+    <div class="verdict-grid">
+      <div class="verdict-card">
+        <h3>七個結構性問題的嚴重度分布</h3>
+        <p style="color:var(--ink-soft);font-size:15px;margin-top:0;">2 個致命、3 個重要、2 個觀察。致命項都不是行銷問題，是<b>會計與誠信</b>問題——也就是說，花更多錢做行銷只會放大它們。</p>
+        <div class="twocol" style="margin-top:20px;">
+          <p><span style="color:var(--red);font-weight:700;">●</span> 單位經濟學黑洞</p>
+          <p><span style="color:var(--red);font-weight:700;">●</span> 「省39%」是假的</p>
+          <p><span style="color:var(--amber);font-weight:700;">●</span> 試用 × 計量 AI 濫用破口</p>
+          <p><span style="color:var(--amber);font-weight:700;">●</span> SKU 過多 / 價值錯位</p>
+          <p><span style="color:var(--amber);font-weight:700;">●</span> 幣別模糊</p>
+          <p><span style="color:var(--yellow);font-weight:700;">●</span> 留存 / LTV 盲區</p>
+          <p><span style="color:var(--yellow);font-weight:700;">●</span> 護城河被當副業</p>
+        </div>
+      </div>
+      <div class="verdict-card" style="text-align:center;">
+        <h3 style="text-align:left;">商業底盤健康度</h3>
+        <div class="score">58<small>/100</small></div>
+        <div class="bar"><i style="width:58%"></i></div>
+        <p style="font-size:13px;color:var(--ink-soft);text-align:left;margin-top:6px;">扣分集中在「不知道毛利」與「定價誠信」。一旦補上三個關鍵數字並修正定價，可快速拉到 80+。</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- 2 -->
-<section>
+<!-- ISSUES -->
+<section id="issues">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">02</span><h2>我們正在把這幾件事做好</h2></div>
-    <div class="cards">
-      <div class="card"><div class="n">誠實</div><h3>定價講清楚</h3><p>年訂的折扣標示，要跟你實際付的金額對得上。在一個靠信任的健康品牌，把話講清楚，比什麼都重要。</p></div>
-      <div class="card"><div class="n">健康</div><h3>確認每個方案都賺錢</h3><p>訂閱含 AI 功能、每次使用都有成本。我們會先確認：不會出現「用越多反而越虧」，把地基算清楚再成長。</p></div>
-      <div class="card"><div class="n">清晰</div><h3>用「結果」賣，不用「額度」賣</h3><p>顧客買的從來不是「20 次 AI」，而是「老狗的安心」「抓出獸醫沒看到的事」。方案用為誰而設、能換到什麼來命名。</p></div>
-      <div class="card"><div class="n">長期</div><h3>顧好回頭客</h3><p>訂閱生意的關鍵不是單月衝多少，而是客人留多久。我們把「回頭率」當成核心指標在追。</p></div>
-    </div>
-  </div>
-</section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>七個結構性問題</h2></div>
 
-<!-- 3 護城河 -->
-<section>
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num">03</span><h2>真正的寶藏：一份會「記得」也會「預警」的健康紀錄</h2></div>
-    <p class="lead">別人提供一次性的血檢，是<strong>一張快照</strong>；Pawtient 累積的，是一部<strong>會預警的紀錄片</strong>。這份「9 種語言 × 64 項參數 × 長期累積」的數據，才是別人複製不了的護城河，也是未來和保險、獸醫合作的底氣。</p>
-    <div class="moat">
-      <div class="vs"><div class="kk">別人 · 一次性血檢</div><h4>一張快照</h4><p>今天數字正常 → 看起來沒事。看不到變化、看不到趨勢、看不到「還在正常範圍內就已開始下滑」的訊號。</p></div>
-      <div class="us"><div class="kk">Pawtient · 長期紀錄</div><h4>一部會預警的紀錄片</h4><p>每項參數每次都記得、都畫成趨勢線。當數字開始偏移，你在症狀出現之前就先收到提醒。</p></div>
+    <div class="issue">
+      <div class="dot sev-crit"></div>
+      <div>
+        <h4>單位經濟學黑洞<span class="sev-pill pill-crit">致命</span><button class="fixbtn" data-fix="1">修正方案 ↓</button></h4>
+        <p>訂閱方案內含<b>計量 AI 成本</b>：血檢掃描分析、AI 諮詢、獸醫摘要、語音轉錄——每一項都是真實的推論花費。Family 月繳 $390 給到「20 掃描 + 60 AI + 25 摘要 + 60 分鐘轉錄」，一個重度用戶把額度用滿時，COGS 很可能逼近、甚至超過月費。</p>
+        <div class="fix"><b>風險本質：</b>這是一門「賣越多、可能虧越多」的潛在生意。在你算出每方案的毛利之前，所有成長動作都是放大風險。先做這件事，優先於行銷。</div>
+      </div>
     </div>
-    <div class="trip">
-      <div class="tc"><div class="n">64</div><div class="m">「獸醫五分鐘看不完的 64 個數字，我們每次都記得。」</div></div>
-      <div class="tc"><div class="n">趨勢</div><div class="m">「健康不是快照，是趨勢線——提早幾個月看見變化。」</div></div>
-      <div class="tc"><div class="n">9</div><div class="m">「不管你說什麼語言，都讀得懂毛孩的身體。」</div></div>
+
+    <div class="issue">
+      <div class="dot sev-crit"></div>
+      <div>
+        <h4>「省 39%」是假的<span class="sev-pill pill-crit">致命</span><button class="fixbtn" data-fix="2">修正方案 ↓</button></h4>
+        <p>實算：Premium 年繳 1,990 vs 月繳×12=2,280 → <b class="bad">只省 12.7%</b>；Family 3,990 vs 4,680 → <b class="bad">只省 14.7%</b>。標示的 39% 與畫面上的價格自相矛盾。在一個<b>靠信任活著的健康品類</b>，這既是不實標示的法律風險，也是品牌自殺。</p>
+        <div class="fix"><b>兩條路：</b>要嘛把年繳真的降到 39%（Premium→約1,390、Family→約2,850）兌現承諾；要嘛拿掉假數字、改標真實折扣。<b>今天就改</b>。</div>
+      </div>
     </div>
-    <div style="margin-top:26px">
-      <div class="tg">獸醫看當下，我們看趨勢。<span>主標 · 一刀切中差異</span></div>
+
+    <div class="issue">
+      <div class="dot sev-high"></div>
+      <div>
+        <h4>免費試用 × 計量 AI = 濫用破口<span class="sev-pill pill-high">重要</span><button class="fixbtn" data-fix="3">修正方案 ↓</button></h4>
+        <p>每個付費方案都掛 freeTrialBadge。當試用期裡就能燒掉昂貴的 AI 額度，會出現「<b>註冊→用滿額度→流失</b>」的薅羊毛行為，等於你自費請人用完就走。</p>
+        <div class="fix"><b>處方：</b>試用期改為「限縮額度」或「先綁定付款、低門檻體驗核心魔法（血檢秒解讀）」，把昂貴額度留給已付費者。</div>
+      </div>
+    </div>
+
+    <div class="issue">
+      <div class="dot sev-high"></div>
+      <div>
+        <h4>SKU 過多 + 價值指標錯位<span class="sev-pill pill-high">重要</span><button class="fixbtn" data-fix="4">修正方案 ↓</button></h4>
+        <p>四個方案、以「用量配額」計價，而非「顧客在乎的價值」。更糟的是 <b>Family（2 倍價、約 3 倍額度）其實比 Premium 更划算</b>，會稀釋你主推的 Premium。顧客買的從來不是「20 次 AI」，是「老狗的安心」「抓出獸醫沒看到的事」。</p>
+        <div class="fix"><b>處方：</b>精簡方案、用「為誰而設 / 達成什麼結果」命名與定價，而不是配額數字。</div>
+      </div>
+    </div>
+
+    <div class="issue">
+      <div class="dot sev-high"></div>
+      <div>
+        <h4>幣別模糊<span class="sev-pill pill-high">重要</span><button class="fixbtn" data-fix="5">修正方案 ↓</button></h4>
+        <p>畫面顯示「$190.00」，符號像美金；而你支援 <b>9 種語言</b>、面向國際。海外用戶看到「$3,990」會誤判為美金而直接跳出，或反向產生定價混亂。</p>
+        <div class="fix"><b>處方：</b>明確標 <b>NT$ / TWD</b>，並依市場做在地化幣別顯示。</div>
+      </div>
+    </div>
+
+    <div class="issue">
+      <div class="dot sev-watch"></div>
+      <div>
+        <h4>留存 / LTV 盲區<span class="sev-pill pill-watch">觀察</span><button class="fixbtn" data-fix="6">修正方案 ↓</button></h4>
+        <p>訂閱生意的生死在 churn，不在單月 GMV。目前討論裡沒有任何流失率 / LTV 數據。沒有它，「衝刺 500k」可能是把未來的營收提前燒掉。</p>
+        <div class="fix"><b>處方：</b>把月流失率、年訂續訂率納入北極星儀表板，與「序號核銷率」並列。</div>
+      </div>
+    </div>
+
+    <div class="issue">
+      <div class="dot sev-watch"></div>
+      <div>
+        <h4>真正的護城河被當副業<span class="sev-pill pill-watch">觀察</span><button class="fixbtn" data-fix="7">修正方案 ↓</button><button class="mktbtn" data-target2="mkt-moat">行銷概念 ↓</button></h4>
+        <p>你最稀缺的資產是「<b>9 語言 × 64 參數 × 縱向時間</b>」的寵物健康數據，以及由它衍生的保險／獸醫 B2B2C 通路。這才是別人複製不了的東西，目前卻被當成「之後再說」的副線。</p>
+        <div class="fix"><b>處方：</b>把數據飛輪與保險合作放進核心路線圖，消費者訂閱是「數據獲取層」，平台價值向 B2B 收。</div>
+      </div>
+    </div>
+
+    <style>
+    .mktbtn{font-family:"Noto Sans TC",sans-serif;font-size:12px;font-weight:700;color:#fff;background:var(--amber);border:none;border-radius:5px;padding:4px 12px;margin-left:4px;cursor:pointer;letter-spacing:.03em;vertical-align:middle;transition:.15s;white-space:nowrap;}
+    .mktbtn:hover{background:#a06715;} .mktbtn.open{background:var(--accent-2);}
+    .mktplan{display:none;margin-top:18px;background:#fff;border:1px solid var(--hair);border-radius:11px;padding:30px;}
+    .mktplan.show{display:block;animation:fpfade .3s ease;}
+    .mktplan .mtitle{font-family:"Noto Serif TC",serif;font-size:21px;margin:0 0 4px;}
+    .mktplan .msub{color:var(--ink-soft);font-size:14.5px;margin:0 0 8px;}
+    .mktplan .mlabel{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:26px 0 12px;font-weight:600;border-top:1px solid var(--hair);padding-top:18px;}
+    .mktplan .idea{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--hair);border-radius:10px;overflow:hidden;}
+    .mktplan .idea>div{padding:22px;}
+    .mktplan .idea .vs{background:var(--paper-2);} .mktplan .idea .us{background:var(--ink);color:var(--paper);}
+    .mktplan .idea h6{margin:0 0 6px;font-family:"Noto Serif TC",serif;font-size:18px;}
+    .mktplan .idea .kk{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px;}
+    .mktplan .idea .vs .kk{color:var(--accent-2);} .mktplan .idea .us .kk{color:#8fd3c8;}
+    .mktplan .idea p{margin:0;font-size:13px;opacity:.85;}
+    .mktplan .trip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+    .mktplan .tc{border:1px solid var(--hair);border-radius:9px;padding:18px;}
+    .mktplan .tc .a{font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;}
+    .mktplan .tc .n{font-family:"Fraunces",serif;font-size:32px;font-weight:600;color:var(--accent);line-height:1;margin:4px 0;}
+    .mktplan .tc .m{font-family:"Noto Serif TC",serif;font-size:15px;font-weight:600;line-height:1.4;margin-top:8px;}
+    .mktplan .tg{border-left:3px solid var(--accent);padding:9px 14px;font-family:"Noto Serif TC",serif;font-size:17px;font-weight:600;background:var(--paper-2);border-radius:0 6px 6px 0;margin-bottom:8px;}
+    .mktplan .tg span{display:block;font-family:"Noto Sans TC",sans-serif;font-size:11px;font-weight:400;color:var(--ink-soft);margin-top:2px;}
+    .mkrow{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 16px;scroll-snap-type:x mandatory;}
+    .mkrow::-webkit-scrollbar{height:7px;} .mkrow::-webkit-scrollbar-thumb{background:var(--hair);border-radius:99px;}
+    .mslide{flex:0 0 226px;height:226px;scroll-snap-align:center;border-radius:14px;padding:20px;position:relative;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(28,26,23,.12);overflow:hidden;}
+    .mslide.dark{background:#16302b;color:#f3efe6;} .mslide.paper{background:#f3eee2;color:var(--ink);border:1px solid #e2dccd;} .mslide.accent{background:var(--accent);color:#fff;}
+    .mslide .pg{position:absolute;top:11px;right:15px;font-family:"Fraunces",serif;font-size:11px;opacity:.6;}
+    .mslide .eb{font-family:"Fraunces",serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;margin-bottom:auto;}
+    .mslide .bg{font-family:"Noto Serif TC",serif;font-weight:900;font-size:20px;line-height:1.24;}
+    .mslide .bg.s{font-size:15.5px;font-weight:700;}
+    .mslide .sb{font-size:11px;margin-top:8px;opacity:.85;line-height:1.5;}
+    .mslide .br{position:absolute;bottom:11px;left:20px;font-size:8px;letter-spacing:.12em;opacity:.5;}
+    .mktplan .hk{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+    .mktplan .hk h6{font-family:"Noto Serif TC",serif;font-size:13px;margin:0 0 8px;border-bottom:2px solid var(--accent);padding-bottom:5px;}
+    .mktplan .hk .x{font-size:12.5px;background:var(--paper-2);border-radius:5px;padding:7px 9px;margin-bottom:6px;line-height:1.35;}
+    .mktplan .hk .x.b{background:rgba(14,93,82,.08);font-weight:500;}
+    .mktplan .caps{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;}
+    .mktplan .cap{background:var(--paper-2);border-radius:9px;padding:20px;font-size:13px;white-space:pre-line;line-height:1.65;}
+    .mktplan .cap.b2b{background:var(--ink);color:var(--paper);}
+    .mktplan .cap.b2b .one{font-family:"Noto Serif TC",serif;font-size:16px;font-weight:600;color:#fff;line-height:1.5;}
+    @media(max-width:760px){.mktplan .trip,.mktplan .hk,.mktplan .caps,.mktplan .idea{grid-template-columns:1fr;}}
+    </style>
+
+    <div class="mktplan" id="mkt-moat">
+      <div class="mtitle">護城河行銷概念稿：把「數據」翻成會心動的人話</div>
+      <p class="msub">9 語言 × 64 參數 × 縱向時間——沒人會為「參數」心動，行銷的工作是把它變成飼主會收藏、會轉發的話。</p>
+
+      <div class="mlabel">01 · 核心定位：快照 vs 紀錄片</div>
+      <div class="idea">
+        <div class="vs"><div class="kk">別人 / 一次性血檢</div><h6>一張快照</h6><p>今天數字正常 → 看起來沒事。看不到變化、看不到趨勢、看不到還在「正常範圍內」就已開始滑落的訊號。</p></div>
+        <div class="us"><div class="kk">Pawtient AI / 縱向紀錄</div><h6>一部會預警的紀錄片</h6><p>64 項參數、每次都記得、都畫成趨勢線。當數字開始偏移，你在症狀出現之前就收到提醒。</p></div>
+      </div>
+
+      <div class="mlabel">02 · 三個資產，三句人話</div>
+      <div class="trip">
+        <div class="tc"><div class="a">廣度 Breadth</div><div class="n">64</div><div class="m">「獸醫五分鐘看不完的 64 個數字，我們每次都記得。」</div></div>
+        <div class="tc"><div class="a">深度 Over time</div><div class="n">∞</div><div class="m">「健康不是快照，是趨勢線——提早幾個月看見變化。」</div></div>
+        <div class="tc"><div class="a">普及 Reach</div><div class="n">9</div><div class="m">「不管你說什麼語言，都讀得懂毛孩的身體。」</div></div>
+      </div>
+
+      <div class="mlabel">03 · 標語候選</div>
+      <div class="tg">獸醫看當下，我們看趨勢。<span>主標 · 最推薦，一刀切中差異</span></div>
       <div class="tg">在症狀出現之前，數據已經在說話。<span>情緒版 · 適合高齡犬貓</span></div>
       <div class="tg">一份會記得、也會預警的健康紀錄。<span>產品定位版 · 取代「寵物 App」</span></div>
+
+      <div class="mlabel">04 · 實際排出來的 IG 輪播「牠生病前 90 天就變了」（← 左右滑 →）</div>
+      <div class="mkrow">
+        <div class="mslide dark"><span class="pg">1/7</span><div class="eb">封面 Hook</div><div class="bg">牠看起來<br>好好的。</div><div class="sb">但 3 個月前，這個數字就開始悄悄變了。</div><span class="br">PAWTIENT AI</span></div>
+        <div class="mslide paper"><span class="pg">2/7</span><div class="eb">建立對比</div><div class="bg s">獸醫看的，<br>是一張「快照」。</div><div class="sb">今天正常 → 沒事。但它看不到「變化」。</div><span class="br">PAWTIENT AI</span></div>
+        <div class="mslide paper"><span class="pg">3/7</span><div class="eb">翻轉認知</div><div class="bg s">健康不是照片，<br>是一條趨勢線。</div><div class="sb">重點是「這三個月往哪走」。</div><span class="br">PAWTIENT AI</span></div>
+        <div class="mslide paper"><span class="pg">4/7</span><div class="eb">證據 趨勢圖</div><div class="bg s">正常範圍內，<br>卻一路下滑。</div>
+          <svg width="100%" height="60" viewBox="0 0 186 60" fill="none" style="margin-top:auto;">
+            <rect x="0" y="14" width="186" height="30" fill="#0e5d52" opacity="0.08"/>
+            <line x1="0" y1="14" x2="186" y2="14" stroke="#0e5d52" stroke-dasharray="3 3" opacity=".4"/>
+            <line x1="0" y1="44" x2="186" y2="44" stroke="#0e5d52" stroke-dasharray="3 3" opacity=".4"/>
+            <polyline points="5,21 36,23 67,27 98,31 129,35 160,39 182,41" fill="none" stroke="#7a2e2e" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="5" cy="21" r="2.6" fill="#7a2e2e"/><circle cx="182" cy="41" r="3" fill="#7a2e2e"/>
+          </svg>
+          <span class="br">PAWTIENT AI</span></div>
+        <div class="mslide paper"><span class="pg">5/7</span><div class="eb">亮出護城河</div><div class="bg s">64 項參數，<br>每次都記得、<br>都畫成線。</div><div class="sb">人會忘，趨勢不會自己出現。</div><span class="br">PAWTIENT AI</span></div>
+        <div class="mslide dark"><span class="pg">6/7</span><div class="eb">承諾 利益點</div><div class="bg s">趨勢一偏移，<br>你會提早收到提醒——</div><div class="sb">在症狀出現之前。對高齡毛孩，這幾個月可能就是一切。</div><span class="br">PAWTIENT AI</span></div>
+        <div class="mslide accent"><span class="pg">7/7</span><div class="eb">CTA</div><div class="bg s">給牠一份會「記得」<br>也會「預警」的<br>健康紀錄。</div><div class="sb">留言「趨勢」拿血檢解讀懶人包 →</div><span class="br">PAWTIENT AI</span></div>
+      </div>
+
+      <div class="mlabel">05 · Hook 庫（15 字內 · 5 型 · ★ 為首選）</div>
+      <div class="hk">
+        <div><h6>好奇心型</h6><div class="x b">牠沒事，數據卻先變了 ★</div><div class="x">獸醫沒說的，藏在趨勢裡</div><div class="x">正常範圍內，也可能在惡化</div></div>
+        <div><h6>反向思考型</h6><div class="x b">健康不是照片，是趨勢線 ★</div><div class="x">一張血檢，看不出真相</div><div class="x">看當下的數字，會騙了你</div></div>
+        <div><h6>情緒張力型</h6><div class="x b">我多希望早三個月知道 ★</div><div class="x">牠不會說，數字會</div><div class="x">給老狗的，是提早的安心</div></div>
+        <div><h6>具體數字型</h6><div class="x b">生病前 90 天就有跡象 ★</div><div class="x">64 個數字，一條趨勢線</div><div class="x">9 種語言，都讀得懂牠</div></div>
+        <div><h6>低調權威型</h6><div class="x b">趨勢，比單次更誠實 ★</div><div class="x">我們記得每一次血檢</div><div class="x">數據累積，才看得見變化</div></div>
+      </div>
+
+      <div class="mlabel">06 · 可直接用的文案</div>
+      <div class="caps">
+        <div class="cap">牠看起來很好。
+
+但如果把牠這一年的血檢攤開來看，可能會發現——有個數字早就一路往下，只是每次都還「在正常範圍內」，所以沒人喊停。
+
+獸醫看的是今天這一張。
+我們幫你記得的，是整條趨勢線。
+
+64 項參數、每次都留著、自動畫成圖。當它開始偏移，你會提早收到提醒——在症狀出現之前。
+
+對年紀大的毛孩，那幾個月，往往就是一切。
+
+留言「趨勢」，我把血檢解讀懶人包傳給你 🫶🏻
+#毛孩健康 #高齡犬 #高齡貓 #寵物血檢 #PawtientAI</div>
+        <div class="cap b2b"><div class="one">「全台最完整的寵物『縱向』健康數據層——64 項血檢參數 × 9 語言 × 真實飼主長期記錄。讓核保更準、理賠更快、風險提早看得見。」</div><p style="font-size:12.5px;color:#c9c3b8;margin-top:14px;">同一個護城河，對 B2C 講「安心」，對 B2B 講「風險定價」。消費者是數據獲取層，平台價值向保險／獸醫收——這就是把副業變主線的那句話。</p></div>
+      </div>
+    </div>
+    <script>
+    document.querySelectorAll('.mktbtn').forEach(function(b){b.addEventListener('click',function(){var p=document.getElementById(b.getAttribute('data-target2'));var s=p.classList.toggle('show');b.classList.toggle('open',s);b.textContent=s?'收起 ↑':'行銷概念 ↓';});});
+    </script>
+  </div>
+  <style>
+    .fixbtn{font-family:"Noto Sans TC",sans-serif;font-size:12px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:5px;padding:4px 12px;margin-left:4px;cursor:pointer;letter-spacing:.03em;vertical-align:middle;transition:.15s;white-space:nowrap;}
+    .fixbtn:hover{background:#0a4a41;}
+    .fixbtn.open{background:var(--accent-2);}
+    .fixplan{display:none;margin-top:16px;background:linear-gradient(180deg,rgba(14,93,82,.08),rgba(14,93,82,.03));border:1px solid rgba(14,93,82,.28);border-radius:9px;padding:22px 24px;}
+    .fixplan.show{display:block;animation:fpfade .28s ease;}
+    @keyframes fpfade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+    .fixplan h5{margin:0 0 4px;font-family:"Noto Serif TC",serif;font-size:17px;color:var(--accent);}
+    .fixplan .goal{font-size:14px;color:var(--ink-soft);margin-bottom:14px;}
+    .fixplan ol{margin:0 0 16px;padding-left:20px;font-size:14.5px;color:var(--ink);}
+    .fixplan ol li{margin-bottom:8px;line-height:1.55;}
+    .fixplan ol li b{color:var(--accent-2);}
+    .fixplan .meta{display:flex;flex-wrap:wrap;gap:26px;border-top:1px dashed rgba(14,93,82,.3);padding-top:14px;}
+    .fixplan .meta div{font-size:13.5px;color:var(--ink);max-width:340px;}
+    .fixplan .meta b{font-family:"Fraunces",serif;color:var(--accent);display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px;}
+  </style>
+  <script>
+  (function(){
+    var FIXES={
+      "1":{title:"修正方案：先量、再砍、後遷",goal:"確認每方案在各用量下毛利為正，並把 COGS 砍下來。",
+        steps:["<b>埋點</b>：記錄每次掃描／諮詢／摘要／轉錄的實際 token 與成本，按用戶聚合。","<b>算毛利</b>：用試算器框架算出每方案 p50／p95 用量下的貢獻毛利。","<b>模型分流</b>：日常用小模型、複雜判讀才升級前沿；病歷 context 做 prompt caching（COGS 砍 5–10 倍）。","<b>通路遷移</b>：主推官網／蝦皮結帳，避開 Apple 30%。","<b>超額保護</b>：重度用戶軟降速或轉加購包，斬斷負毛利尾巴。"],
+        measure:"每方案貢獻毛利率 ≥ 60%、且 p95 用量仍為正。",time:"埋點＋試算 1 週；模型分流 2–3 週（工程）。"},
+      "2":{title:"修正方案：合規止血 ＋ 真折扣",goal:"定價誠信合規，且年訂有真實購買誘因。",
+        steps:["<b>今天</b>：把 App／官網的「省39%」字樣改成真實折扣，或先下架該 badge（零成本止血）。","<b>常設年訂</b>：改「送 3 個月＝省 25%」（Premium→約1,790、Family→約3,590）。","<b>衝刺加碼</b>：限時「送 4 個月＝省 33%」（Care 1,590／Pro 3,190）。","<b>可驗證標示</b>：用「省 X%（年訂＝付 9 個月）」這種對得上的語言。"],
+        measure:"頁面折扣數字 = 實際結帳折扣（100% 一致）；年訂轉換率。",time:"文案／badge 今天改；定價調整本週。"},
+      "3":{title:"修正方案：用魔法時刻取代免費月",goal:"讓第一次互動展示價值，而不是送昂貴額度。",
+        steps:["取消「全功能限時試用」。","改「<b>永久體驗層</b>」：1 次血檢秒解讀＋3 AI／1 摘要／5 分鐘（每月）。","想體驗完整功能 → <b>先綁付款</b>的低門檻首月優惠（而非免費）。","裝置／身分節流，擋多帳號農場。"],
+        measure:"試用→付費轉換率↑、單一試用平均 COGS↓、薅羊毛流失成本↓。",time:"產品調整 1–2 週。"},
+      "4":{title:"修正方案：用結果賣，不用配額賣",goal:"精簡 SKU，改成結果導向的定位與命名。",
+        steps:["精簡為三層：<b>體驗 / Care（個人）/ Pro（家庭）</b>。","命名與文案改結果導向：「抓出獸醫沒看到的事」「給老狗的安心」。","修正 Family＞Premium 的價值倒掛，讓主推方案的划算感清楚。"],
+        measure:"主推方案（Care）佔比、整體轉換率。",time:"定價頁改版 1 週。"},
+      "5":{title:"修正方案：標清幣別 ＋ 在地化",goal:"消除「$ 看起來像美金」的國際誤判。",
+        steps:["全站價格標明 <b>NT$／TWD</b>。","依 9 種語言／地區做在地化幣別與定價顯示。","國際版評估分區定價（PPP）。"],
+        measure:"海外頁面跳出率↓、國際轉換率↑。",time:"顯示今天可改；在地化 1–2 週。"},
+      "6":{title:"修正方案：把 churn 變成北極星",goal:"把訂閱生意的命脈（流失率）納入儀表板。",
+        steps:["建立月流失率、年訂續訂率、cohort 留存曲線。","與「序號核銷率」<b>並列</b>為北極星指標。","算 LTV＝月貢獻毛利÷月流失率，設 LTV/CAC ≥ 3 門檻。"],
+        measure:"churn 可視化、LTV/CAC 達標。",time:"分析建置 1 週。"},
+      "7":{title:"修正方案：把飛輪放進核心路線圖",goal:"讓數據×保險從副業變成主線。",
+        steps:["把「<b>64 參數 × 9 語言 × 縱向時間</b>」資料定義為核心資產，建資料治理。","保險 B2B2C：爭取首年保費分潤 15–20%＋數據對價（<b>非</b>一次性 CPA）。","消費者訂閱定位為「數據獲取層」，平台價值向 B2B 收。"],
+        measure:"保險合約、B2B 營收占比、資料覆蓋成長。",time:"路線圖本季納入；保險洽談本季啟動。"}
+    };
+    function render(f){
+      return '<h5>'+f.title+'</h5><div class="goal">'+f.goal+'</div><ol>'+
+        f.steps.map(function(s){return '<li>'+s+'</li>';}).join('')+'</ol>'+
+        '<div class="meta"><div><b>衡量</b>'+f.measure+'</div><div><b>時程</b>'+f.time+'</div></div>';
+    }
+    document.querySelectorAll('.fixbtn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var col=btn.closest('.issue').lastElementChild;
+        var panel=col.querySelector('.fixplan');
+        if(!panel){
+          panel=document.createElement('div');
+          panel.className='fixplan';
+          panel.innerHTML=render(FIXES[btn.getAttribute('data-fix')]);
+          col.appendChild(panel);
+        }
+        var show=panel.classList.toggle('show');
+        btn.classList.toggle('open',show);
+        btn.textContent=show?'收起 ↑':'修正方案 ↓';
+      });
+    });
+  })();
+  </script>
+</section>
+
+<!-- PRICING ANATOMY -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>定價解剖</h2></div>
+    <p class="lead">兩張表把問題與機會講完：年訂折扣是假的（要修），而<strong>蝦皮通路藏著一個反直覺的毛利套利</strong>（要用力推）。</p>
+
+    <h3 class="serif" style="margin-top:40px;font-size:20px;">A. 年訂折扣 — 承諾與現實的落差</h3>
+    <table>
+      <thead><tr><th>方案</th><th>月繳×12</th><th>年繳</th><th>標示折扣</th><th>實際折扣</th></tr></thead>
+      <tbody>
+        <tr><td>Premium</td><td>NT$2,280</td><td><b>NT$1,990</b></td><td>省 39%</td><td class="bad">省 12.7% ✗</td></tr>
+        <tr><td>Family</td><td>NT$4,680</td><td><b>NT$3,990</b></td><td>省 39%</td><td class="bad">省 14.7% ✗</td></tr>
+      </tbody>
+      <caption>年訂是單月衝刺唯一能「一次入帳」的引擎，但現在的真實誘因太弱，拉不動現金前置。</caption>
+    </table>
+
+    <h3 class="serif" style="margin-top:48px;font-size:20px;">B. 蝦皮的毛利套利 — 同價或更低，你反而多賺</h3>
+    <table>
+      <thead><tr><th>通路</th><th>對顧客售價</th><th>平台抽成</th><th>你實拿（淨）</th></tr></thead>
+      <tbody>
+        <tr><td>App 內購 · Premium 年</td><td>NT$1,990</td><td>Apple/Google 約 30%</td><td>~NT$1,393</td></tr>
+        <tr class="hl"><td>蝦皮序號 · Premium 年</td><td><b>NT$1,790</b></td><td>蝦皮 約 6%</td><td class="good">~NT$1,683（+290）</td></tr>
+      </tbody>
+      <caption>你把蝦皮標得比 App「便宜 200 元」，顧客覺得賺到，你每單反而多賺約 290 元。建議主推「年卡組合包」（年訂序號＋實體卡＋贈品）把客單拉到 NT$2,290 / 3,590。</caption>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== PRICING REBUILD WORKBENCH ===================== -->
+<section id="workbench">
+  <style>
+    .wb-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:38px 0 0;border-bottom:1px solid var(--hair);}
+    .wb-tab{font-family:"Noto Sans TC",sans-serif;font-size:15px;font-weight:500;padding:13px 20px;border:none;background:none;color:var(--ink-soft);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:.18s;}
+    .wb-tab:hover{color:var(--ink);}
+    .wb-tab.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:700;}
+    .wb-panel{display:none;padding:36px 0 0;}
+    .wb-panel.active{display:block;animation:wbfade .32s ease;}
+    @keyframes wbfade{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:none;}}
+    .wb-panel h3{font-family:"Noto Serif TC",serif;font-size:23px;margin:0 0 8px;}
+    .wb-panel .sub{color:var(--ink-soft);font-size:16px;max-width:760px;margin:0 0 22px;}
+    .lever{display:grid;grid-template-columns:30px 1fr;gap:16px;padding:20px 0;border-top:1px solid var(--hair);}
+    .lever:first-of-type{border-top:none;}
+    .lever .ln{font-family:"Fraunces",serif;font-size:22px;color:var(--accent);font-weight:600;}
+    .lever h4{margin:0 0 4px;font-family:"Noto Serif TC",serif;font-size:18px;}
+    .lever .ba{font-size:14.5px;color:var(--ink-soft);}
+    .lever .ba b{color:var(--accent-2);}
+    .lever .eff{margin-top:8px;font-size:14px;border-left:3px solid var(--accent);padding-left:12px;color:var(--ink);}
+    .np{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:8px 0 28px;}
+    .np .card{border:1px solid var(--hair);border-radius:9px;padding:24px;background:#fff;display:flex;flex-direction:column;}
+    .np .card.feat{border:2px solid var(--accent);box-shadow:0 8px 30px rgba(14,93,82,.08);}
+    .np .badge{align-self:flex-start;font-family:"Fraunces",serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;background:var(--accent);color:#fff;padding:3px 9px;border-radius:4px;margin-bottom:10px;}
+    .np .nm{font-family:"Noto Serif TC",serif;font-weight:700;font-size:20px;}
+    .np .role{font-size:12.5px;color:var(--ink-soft);margin-bottom:6px;}
+    .np .pr{font-family:"Fraunces",serif;font-size:34px;font-weight:600;line-height:1;margin:6px 0 2px;}
+    .np .pr small{font-size:14px;color:var(--ink-soft);font-weight:400;}
+    .np .yr{font-size:13px;color:var(--accent);font-weight:700;margin:6px 0 14px;}
+    .np ul{list-style:none;padding:0;margin:0 0 8px;font-size:14px;color:var(--ink-soft);}
+    .np li{padding:6px 0;border-bottom:1px dashed var(--hair);}
+    .np .why{font-size:13px;color:var(--ink);margin-top:auto;padding-top:10px;border-top:1px solid var(--hair);}
+    /* calculator */
+    .calc{background:var(--paper-2);border:1px solid var(--hair);border-radius:10px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:8px;}
+    .calc .ctl{margin-bottom:16px;}
+    .calc label{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:6px;font-weight:600;}
+    .calc select,.calc input[type=number]{width:100%;padding:9px 12px;border:1px solid var(--hair);border-radius:6px;font-family:inherit;font-size:15px;background:#fff;color:var(--ink);}
+    .calc input[type=range]{width:100%;accent-color:var(--accent);}
+    .quota-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .usage-val{font-family:"Fraunces",serif;color:var(--accent);font-weight:600;}
+    .waterfall .wf{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--hair);font-size:15px;}
+    .waterfall .wf b{font-family:"Fraunces",serif;font-size:17px;}
+    .waterfall .wf.tot{border-bottom:2px solid var(--ink);}
+    .wf .note{font-size:11px;color:var(--ink-soft);display:block;}
+    .cm-box{margin-top:20px;padding:22px;border-radius:8px;text-align:center;}
+    .cm-pos{background:rgba(14,93,82,.1);border:1px solid rgba(14,93,82,.25);}
+    .cm-neg{background:rgba(176,50,43,.1);border:1px solid rgba(176,50,43,.25);}
+    .cm-box .big{font-family:"Fraunces",serif;font-size:42px;font-weight:600;line-height:1;}
+    .cm-box .lbl{font-size:14px;margin-top:6px;font-weight:600;}
+    .cm-box .pct{font-size:13px;color:var(--ink-soft);}
+    .be-note{margin-top:14px;font-size:13.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:12px;}
+    @media(max-width:720px){.calc{grid-template-columns:1fr;gap:24px;}.np{grid-template-columns:1fr;}}
+  </style>
+
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02·R</span><h2>定價重構工作台</h2></div>
+    <p class="lead">同一份定價，用<strong>會計 → COO → CFO</strong> 三種腦袋拆，收斂成一套<strong>新方案</strong>，最後給你一個能即時算毛利的試算器。點分頁切換。</p>
+
+    <div class="wb-tabs">
+      <button class="wb-tab active" data-tab="tab-acc">會計拆解</button>
+      <button class="wb-tab" data-tab="tab-coo">COO 決策</button>
+      <button class="wb-tab" data-tab="tab-cfo">CFO 結構</button>
+      <button class="wb-tab" data-tab="tab-new">新定價方案</button>
+      <button class="wb-tab" data-tab="tab-calc">互動毛利試算</button>
+    </div>
+
+    <!-- TAB: 會計 -->
+    <div class="wb-panel active" id="tab-acc">
+      <h3>會計拆解：你的毛利，藏在「貢獻毛利」裡</h3>
+      <p class="sub">訂閱營收要扣兩層才看得到真相：先扣<b>通路抽成</b>得到淨收，再扣<b>會隨用量浮動的 AI 推論成本（COGS）</b>，剩下的才是<b>貢獻毛利（Contribution Margin）</b>。關鍵在於——你的 COGS 和用量綁在一起，所以存在一條「<b>負毛利尾巴</b>」。</p>
+
+      <table>
+        <thead><tr><th>會計層級</th><th>Family（重度・前沿模型・App內購）</th><th>含意</th></tr></thead>
+        <tbody>
+          <tr><td>① 營收</td><td>NT$390</td><td>標價</td></tr>
+          <tr><td>② − 通路抽成</td><td>−117（Apple 30%）</td><td>內購被先抽一刀</td></tr>
+          <tr><td>③ = 淨收</td><td>NT$273</td><td>真正進你口袋的上限</td></tr>
+          <tr><td>④ − AI COGS</td><td>−394（榨滿額度）</td><td>隨用量浮動的變動成本</td></tr>
+          <tr class="hl"><td>⑤ = 貢獻毛利</td><td class="bad">−121 🔴</td><td>這一單，賠錢</td></tr>
+        </tbody>
+        <caption>同一個方案換成「省成本模型＋走蝦皮」就翻正為 +292。會計上，毛利不是定價決定的，是「模型選擇×通路×用量」三者決定的。</caption>
+      </table>
+
+      <h3 style="margin-top:42px;font-size:20px;">損益平衡用量：每個方案撐到幾 % 就翻負</h3>
+      <table>
+        <thead><tr><th>方案</th><th>模型 / 通路</th><th>用量超過這條線就虧</th></tr></thead>
+        <tbody>
+          <tr><td>Family</td><td>前沿模型 / App內購</td><td class="bad">69%</td></tr>
+          <tr><td>Family</td><td>前沿模型 / 蝦皮</td><td class="bad">93%</td></tr>
+          <tr><td>Family</td><td>省成本模型 / App內購</td><td class="good">永遠為正</td></tr>
+          <tr><td>Premium</td><td>前沿模型 / App內購</td><td class="bad">~74%</td></tr>
+        </tbody>
+        <caption>會計結論：在「前沿模型＋內購」下，你最忠誠的重度用戶正好落在虧損區。先量出這張表，是所有定價決策的前提。</caption>
+      </table>
+    </div>
+
+    <!-- TAB: COO -->
+    <div class="wb-panel" id="tab-coo">
+      <h3>COO 決策：五個今天就能拍板的營運槓桿</h3>
+      <p class="sub">會計告訴你「哪裡漏」，COO 負責「怎麼堵、先後順序」。每個槓桿都給你「現況 → 改成 → 效果」。</p>
+
+      <div class="lever"><div class="ln">1</div><div>
+        <h4>額度右調（止血優先）</h4>
+        <div class="ba">現況：Family 給 <b>60 次 AI</b>，是失血最大的一項。 → 改成：AI <b>60→40</b>、其餘維持，並把多出來的成本空間轉成「血檢掃描」這種高感知、低成本的額度。</div>
+        <div class="eff">效果：砍掉只有薅羊毛者會用到的昂貴空間，正常用戶無感，毛利上修。</div>
+      </div></div>
+
+      <div class="lever"><div class="ln">2</div><div>
+        <h4>通路遷移（最快的一刀）</h4>
+        <div class="ba">現況：主走 App 內購，被 <b>Apple/Google 抽 30%</b>。 → 改成：官網/蝦皮序號為主要結帳，App 內只導流。</div>
+        <div class="eff">效果：Family 每單立刻多 NT$94 淨收，足以把多數情境從負毛利救回正。</div>
+      </div></div>
+
+      <div class="lever"><div class="ln">3</div><div>
+        <h4>試用重設計（堵薅羊毛）</h4>
+        <div class="ba">現況：全功能免費試用，可在期內榨乾整月昂貴額度。 → 改成：取消「全額度試用」，給<b>永久免費體驗層</b>（只送 1 次血檢秒解讀的魔法時刻），昂貴額度留給付費者。</div>
+        <div class="eff">效果：第一次互動從「送東西」變「展示價值」，每月省下數萬元純流失成本。</div>
+      </div></div>
+
+      <div class="lever"><div class="ln">4</div><div>
+        <h4>模型分流 ＋ 病歷快取（新定價的前提）</h4>
+        <div class="ba">現況：疑似一律前沿模型、每次諮詢重載病歷。 → 改成：日常用小模型、必要才升級；病歷 context 做 <b>prompt caching</b>。</div>
+        <div class="eff">效果：COGS 砍 <b>5–10 倍</b>。這是讓任何新定價成立的工程前提，不做，定價救不了。</div>
+      </div></div>
+
+      <div class="lever"><div class="ln">5</div><div>
+        <h4>超額保護（封住尾巴）</h4>
+        <div class="ba">現況：額度內吃到飽、無上限行為管理。 → 改成：超過額度<b>軟性降速</b>或轉「加購包」按量計費。</div>
+        <div class="eff">效果：把「負毛利尾巴」用機制斬斷，重度用戶為自己的成本買單。</div>
+      </div></div>
+    </div>
+
+    <!-- TAB: CFO -->
+    <div class="wb-panel" id="tab-cfo">
+      <h3>CFO 結構：把定價變成可預測的現金引擎</h3>
+      <p class="sub">CFO 看三件事：架構、現金時點、單位經濟的敏感度。</p>
+
+      <h3 style="font-size:18px;margin-top:26px;">① 年訂折扣，要誠實也要有威力</h3>
+      <table>
+        <thead><tr><th>折扣設計</th><th>等於付幾個月</th><th>實際省</th><th>用途</th></tr></thead>
+        <tbody>
+          <tr><td>送 2 個月</td><td>10 個月</td><td>16.7%</td><td>太弱，不採用</td></tr>
+          <tr class="hl"><td>送 3 個月</td><td>9 個月</td><td class="good">25%</td><td>常設年訂（誠實、有力）</td></tr>
+          <tr><td>送 4 個月</td><td>8 個月</td><td class="good">33%</td><td>衝刺月限時加碼</td></tr>
+        </tbody>
+        <caption>不要再標假的「省39%」。常設用「送3個月＝省25%」，衝刺月才加碼到「送4個月＝省33%」——給顧客一個「現在就買」的真實理由。</caption>
+      </table>
+
+      <h3 style="font-size:18px;margin-top:34px;">② 為什麼年訂優先（單月衝刺的命門）</h3>
+      <p class="sub" style="margin-bottom:14px;">年訂＝現金一次入帳、回本時點為零；而 COGS 是<b>變動成本</b>（用了才花），所以一個年訂用戶在「使用發生前」就已經是滿手現金。對單月衝 50 萬，年訂是唯一能把未來營收拉到當下的引擎。</p>
+
+      <h3 style="font-size:18px;margin-top:26px;">③ 回本公式（補上 churn 就能算）</h3>
+      <table>
+        <thead><tr><th>指標</th><th>公式</th><th>新策略如何改善</th></tr></thead>
+        <tbody>
+          <tr><td>LTV</td><td>月貢獻毛利 ÷ 月流失率</td><td>降 COGS → 月貢獻毛利↑；年訂 → 流失率↓</td></tr>
+          <tr><td>CAC 回本期</td><td>CAC ÷ 月貢獻毛利</td><td>年訂前置現金 → 回本期趨近 0</td></tr>
+          <tr><td>健康門檻</td><td>LTV / CAC ≥ 3</td><td>先量 churn 才能確認達標</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size:18px;margin-top:34px;">④ 敏感度：新定價成立的前提條件</h3>
+      <p class="sub">同一套新方案，「有沒有做 COGS 優化」會讓貢獻毛利從 <b class="good">+85%</b> 掉到 <b class="bad">負值</b>。所以 CFO 的條件式是：<b>新定價 = 額度右調 + 模型分流 + 通路遷移，三者同時做，缺一不可。</b>到下一頁的試算器可以自己驗證。</p>
+    </div>
+
+    <!-- TAB: 新定價 -->
+    <div class="wb-panel" id="tab-new">
+      <h3>新定價方案：三層 + 誠實年訂</h3>
+      <p class="sub">用「為誰而設」命名、用真折扣、把昂貴額度留給付費者。前提是 COGS 優化已就位。</p>
+
+      <div class="np">
+        <div class="card">
+          <span class="badge" style="background:var(--ink-soft);">獲客層</span>
+          <div class="nm">體驗 Free</div>
+          <div class="role">獲客 ＋ 防薅羊毛</div>
+          <div class="pr">NT$0</div>
+          <div class="yr">永久免費・無時間限制</div>
+          <ul>
+            <li>1 次血檢秒解讀（魔法時刻）</li>
+            <li>3 次 AI 諮詢 / 月</li>
+            <li>1 份獸醫摘要 / 月</li>
+            <li>5 分鐘轉錄 / 月</li>
+          </ul>
+          <div class="why">取代「全功能限時試用」——用一次「哇」獲客，堵住榨滿型薅羊毛。</div>
+        </div>
+
+        <div class="card feat">
+          <span class="badge">最受歡迎</span>
+          <div class="nm">Care 照護</div>
+          <div class="role">個人・單寵（取代 Premium）</div>
+          <div class="pr">NT$199<small> / 月</small></div>
+          <div class="yr">年訂 NT$1,790（送3個月・省25%）</div>
+          <ul>
+            <li>8 次血檢掃描 / 月</li>
+            <li>25 次 AI 諮詢 / 月</li>
+            <li>10 份獸醫摘要 / 月</li>
+            <li>30 分鐘轉錄 / 月</li>
+          </ul>
+          <div class="why">月費小幅進位、掃描額度加碼（成本低、感知高），年訂折扣轉為真實。</div>
+        </div>
+
+        <div class="card">
+          <span class="badge" style="background:var(--accent-2);">多寵家庭</span>
+          <div class="nm">Pro 家庭</div>
+          <div class="role">多寵・全家（取代 Family）</div>
+          <div class="pr">NT$399<small> / 月</small></div>
+          <div class="yr">年訂 NT$3,590（送3個月・省25%）</div>
+          <ul>
+            <li>20 次血檢掃描 / 月</li>
+            <li>40 次 AI 諮詢 / 月 <b style="color:var(--accent-2)">（60→40 止血）</b></li>
+            <li>20 份獸醫摘要 / 月</li>
+            <li>60 分鐘轉錄 / 月</li>
+          </ul>
+          <div class="why">砍掉最失血的 AI 空檔，其餘維持；正常家庭用戶完全無感。</div>
+        </div>
+      </div>
+
+      <table>
+        <thead><tr><th>項目</th><th>現行</th><th>新方案</th><th>為什麼</th></tr></thead>
+        <tbody>
+          <tr><td>免費層</td><td>無（只有全功能試用）</td><td>體驗層：1 次秒解讀＋極小額度</td><td>獲客＋防薅羊毛</td></tr>
+          <tr><td>入門</td><td>Premium 月190／年1,990（假省39%）</td><td>Care 月199／年1,790（真省25%）</td><td>誠信＋年訂誘因變真</td></tr>
+          <tr><td>家庭</td><td>Family 月390／年3,990（60 AI 失血）</td><td>Pro 月399／年3,590（AI 60→40）</td><td>止血＋誠信折扣</td></tr>
+          <tr><td>通路</td><td>主走 App 內購（−30%）</td><td>主推官網／蝦皮（−6%）</td><td>救回 24% 毛利</td></tr>
+          <tr><td>成本</td><td>無模型分流／快取</td><td>強制小模型分流＋病歷快取</td><td>COGS 砍 5–10 倍（前提）</td></tr>
+          <tr class="hl"><td>衝刺加碼</td><td>—</td><td>年訂限時送4個月（省33%）：Care 1,590／Pro 3,190</td><td>給「現在就買」的真實理由</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TAB: 試算器 -->
+    <div class="wb-panel" id="tab-calc">
+      <h3>互動毛利試算器</h3>
+      <p class="sub">拉一拉就知道每個方案在「不同模型 × 通路 × 用量」下是賺是賠。預設故意放一個會賠錢的情境給你看。</p>
+
+      <div class="calc">
+        <div class="ctlcol">
+          <div class="ctl">
+            <label>選擇方案</label>
+            <select id="c-plan">
+              <option value="family" selected>現行 Family</option>
+              <option value="premium">現行 Premium</option>
+              <option value="care">新 Care 照護</option>
+              <option value="pro">新 Pro 家庭</option>
+              <option value="custom">自訂</option>
+            </select>
+          </div>
+          <div class="ctl">
+            <label>月費（NT$，可改）</label>
+            <input type="number" id="c-price" value="390">
+          </div>
+          <div class="ctl">
+            <label>每月額度（可改）</label>
+            <div class="quota-grid">
+              <div><label style="font-weight:400">血檢掃描</label><input type="number" id="c-scan" value="20"></div>
+              <div><label style="font-weight:400">AI 諮詢</label><input type="number" id="c-ai" value="60"></div>
+              <div><label style="font-weight:400">獸醫摘要</label><input type="number" id="c-sum" value="25"></div>
+              <div><label style="font-weight:400">轉錄分鐘</label><input type="number" id="c-min" value="60"></div>
+            </div>
+          </div>
+          <div class="ctl">
+            <label>AI 成本模式</label>
+            <select id="c-mode">
+              <option value="frontier" selected>前沿模型・未優化（貴）</option>
+              <option value="thrifty">省成本・小模型＋快取（便宜）</option>
+            </select>
+          </div>
+          <div class="ctl">
+            <label>結帳通路</label>
+            <select id="c-channel">
+              <option value="app" selected>App 內購（抽 30%）</option>
+              <option value="shopee">官網／蝦皮（抽 6%）</option>
+            </select>
+          </div>
+          <div class="ctl">
+            <label>用量（用掉額度的 <span class="usage-val" id="c-usage-val">80%</span>）</label>
+            <input type="range" id="c-usage" min="0" max="100" value="80">
+          </div>
+        </div>
+
+        <div class="outcol">
+          <div class="waterfall">
+            <div class="wf"><span>月費營收</span><b id="wf-rev">—</b></div>
+            <div class="wf"><span>− 通路抽成</span><b id="wf-fee">—</b></div>
+            <div class="wf tot"><span>= 淨收</span><b id="wf-net">—</b></div>
+            <div class="wf"><span>− AI COGS <span class="note" id="wf-cogs-note"></span></span><b id="wf-cogs">—</b></div>
+          </div>
+          <div class="cm-box cm-pos" id="cm-box">
+            <div class="lbl" id="cm-label">—</div>
+            <div class="big" id="cm-val">—</div>
+            <div class="pct" id="cm-pct">—</div>
+          </div>
+          <div class="be-note" id="c-breakeven">—</div>
+        </div>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink-soft);margin-top:16px;font-style:italic;">單位成本為估算（省成本：掃描0.4／AI0.83／摘要0.2／轉錄0.2元；前沿：2.5／4.8／1.0／0.5元），請以你的實際模型帳單校正後使用。</p>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    document.querySelectorAll('.wb-tab').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        document.querySelectorAll('.wb-tab').forEach(function(b){b.classList.remove('active');});
+        document.querySelectorAll('.wb-panel').forEach(function(p){p.classList.remove('active');});
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+    var UNIT={thrifty:{scan:0.4,ai:0.83,sum:0.2,min:0.2},frontier:{scan:2.5,ai:4.8,sum:1.0,min:0.5}};
+    var FEE={shopee:0.06,app:0.30};
+    var PLANS={premium:{scan:6,ai:20,sum:8,min:20,price:190},family:{scan:20,ai:60,sum:25,min:60,price:390},care:{scan:8,ai:25,sum:10,min:30,price:199},pro:{scan:20,ai:40,sum:20,min:60,price:399}};
+    function $(id){return document.getElementById(id);}
+    function fmt(n){return 'NT$'+Math.round(n).toLocaleString();}
+    function fillPlan(){
+      var p=PLANS[$('c-plan').value];
+      if(p){$('c-price').value=p.price;$('c-scan').value=p.scan;$('c-ai').value=p.ai;$('c-sum').value=p.sum;$('c-min').value=p.min;}
+      calc();
+    }
+    function calc(){
+      var price=+$('c-price').value||0, u=UNIT[$('c-mode').value], fee=FEE[$('c-channel').value], usage=(+$('c-usage').value)/100;
+      var maxCOGS=(+$('c-scan').value||0)*u.scan+(+$('c-ai').value||0)*u.ai+(+$('c-sum').value||0)*u.sum+(+$('c-min').value||0)*u.min;
+      var cogs=maxCOGS*usage, net=price*(1-fee), cm=net-cogs, pct=price>0?cm/price*100:0;
+      $('c-usage-val').textContent=Math.round(usage*100)+'%';
+      $('wf-rev').textContent=fmt(price);
+      $('wf-fee').textContent='−'+fmt(price*fee);
+      $('wf-net').textContent=fmt(net);
+      $('wf-cogs').textContent='−'+fmt(cogs);
+      $('wf-cogs-note').textContent='滿額 '+fmt(maxCOGS)+' × '+Math.round(usage*100)+'%';
+      $('cm-val').textContent=fmt(cm);
+      $('cm-pct').textContent=(cm>=0?'+':'')+pct.toFixed(0)+'% 貢獻毛利率';
+      $('cm-box').className='cm-box '+(cm>=0?'cm-pos':'cm-neg');
+      $('cm-label').textContent=cm>=0?'✅ 此情境賺錢':'🔴 此情境賠錢';
+      var be=maxCOGS>0?net/maxCOGS*100:Infinity;
+      $('c-breakeven').textContent=be>=100?'損益平衡：用量再高也不會虧（永遠為正）':('損益平衡：用量超過 '+be.toFixed(0)+'% 就開始虧錢');
+    }
+    $('c-plan').addEventListener('change',fillPlan);
+    ['c-mode','c-channel'].forEach(function(id){$(id).addEventListener('change',calc);});
+    ['c-price','c-scan','c-ai','c-sum','c-min','c-usage'].forEach(function(id){$(id).addEventListener('input',calc);});
+    fillPlan();
+  })();
+  </script>
+</section>
+
+<!-- PERSONAS -->
+<section id="personas">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>五位顧問，五種視角</h2></div>
+    <p class="lead">同一份體檢，五種思考工具。把它們疊起來看，會發現他們指向同一個核心：<strong>先把毛利與誠信搞定，數據護城河才是真正的金礦。</strong></p>
+
+    <div class="persona">
+      <div>
+        <div class="mono">WB</div>
+        <div class="who"><div class="nm">巴菲特</div><div class="rl">護城河 · 單位經濟 · 誠信</div><div class="lens">問的是：這門生意十年後還在嗎？每一單到底賺不賺？</div></div>
+      </div>
+      <div>
+        <p class="quote">價格是你付出的，價值是你得到的——但如果你連每個顧客的毛利都算不出來，你不是在經營生意，是在點火燒錢。</p>
+        <ul>
+          <li>先回答一個問題：<b>扣掉 AI 成本，每個付費用戶一個月幫你賺多少？</b>算不出來，就別擴張。</li>
+          <li>你的護城河不是 App，是那份會越長越厚的縱向健康數據與保險通路。把錢投在<b>加深它</b>，不是投在買粉絲。</li>
+          <li>「省 39%」這種小不誠實會侵蝕信任資產。在健康品牌，信任就是全部——<b>立刻修正</b>。</li>
+          <li>別用折扣換一個虛榮的單月數字。<b>訓練顧客等折扣，會永久摧毀你的定價權。</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div>
+        <div class="mono">EM</div>
+        <div class="who"><div class="nm">馬斯克</div><div class="rl">第一性原理 · 刪繁 · 攻擊成本</div><div class="lens">問的是：哪些零件可以刪掉？成本的物理極限在哪？</div></div>
+      </div>
+      <div>
+        <p class="quote">最好的零件是不存在的零件。四個方案、一個假折扣——刪掉。然後把 AI 推論成本逼近零，否則你規模化的那天，就是破產的那天。</p>
+        <ul>
+          <li>把方案<b>砍到剩核心</b>，刪掉假折扣。複雜的定價頁是在懲罰想付錢給你的人。</li>
+          <li>你真正的約束不是行銷，是<b>毛利</b>。AI 是跟供應商按次計費嗎？壓低／自建推論成本，這是存亡問題。</li>
+          <li>核心魔法時刻（丟血檢報告 → 秒出洞察）應該<b>免費到讓人尖叫</b>，靠結果收費，產品自己會傳播。</li>
+          <li>設一個瘋狂目標可以，但別騙自己——約束是真實的物理（毛利），不是 PPT 上的數字。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div>
+        <div class="mono">JH</div>
+        <div class="who"><div class="nm">黃仁勳</div><div class="rl">平台 · 數據飛輪 · 生態</div><div class="lens">問的是：你的 CUDA 在哪？誰被你鎖進生態裡？</div></div>
+      </div>
+      <div>
+        <p class="quote">你以為你在做一個 App，其實你坐在一個數據平台上。每多一隻寵物，模型更準、轉換成本更高——這就是你的護城河，你的 CUDA。</p>
+        <ul>
+          <li>重新框定：你不是 B2C 訂閱，你是<b>寵物健康的數據與 AI 層</b>。獸醫、保險、藥廠都想要這一層。</li>
+          <li>啟動飛輪：<b>更多數據 → 更聰明的 AI 獸醫 → 更高價值 → 更多用戶</b>。消費者是數據獲取層，平台價值向 B2B2C 收。</li>
+          <li>算力成本現在是朋友、不是敵人——前提是你拿它換到<b>別人複製不了的數據資產</b>。投資要超前曲線。</li>
+          <li>9 語言 × 64 參數的縱向資料，是<b>全球級的稀缺資產</b>。別賤賣，別只當訂閱賣點。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div>
+        <div class="mono">BC</div>
+        <div class="who"><div class="nm">品牌顧問</div><div class="rl">定位 · 信任 · 清晰 · 情感</div><div class="lens">問的是：顧客在三秒內，懂你是誰、為何信你嗎？</div></div>
+      </div>
+      <div>
+        <p class="quote">在一個靠信任活著的品類，一個假折扣不是行銷瑕疵，是品牌自殺。先把誠信修好，再談成長。</p>
+        <ul>
+          <li>致命優先：拿掉「省 39%」假數字、標清幣別（$ vs NT$）。<b>健康品牌禁不起任何一個謊。</b></li>
+          <li>方案沒有「為誰而設」的名字。別用配額賣，用<b>結果</b>賣：「抓出獸醫沒看到的事」「給老狗的安心」。</li>
+          <li>定位升級：你不是寵物 App，你是<b>「那本會替你提早示警的健康紀錄」</b>。情感先行，功能其次。</li>
+          <li>無臉、數據驅動的內容天生契合這個品牌——<b>專業、可信、不靠網紅</b>，與你的氣質一致。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div>
+        <div class="mono">CO</div>
+        <div class="who"><div class="nm">COO</div><div class="rl">執行 · 單位經濟 · 排序 · 合規</div><div class="lens">問的是：這週、這個月、這一季，先做哪一步？</div></div>
+      </div>
+      <div>
+        <p class="quote">不含保險，單月 500K 是踮腳的目標、不是預測。命門是三個我還沒拿到的數字——在那之前，這是賭注，不是計畫。</p>
+        <ul>
+          <li><b>今天</b>就修折扣數學（合規）＋ 補真實年訂誘因，否則衝刺少一條腿。</li>
+          <li>治理單位經濟：若 Family 用戶燒滿額度的成本 > $390，<b>賣越多虧越多</b>。立刻設有效計量與封頂。</li>
+          <li>用力推蝦皮：避開 Apple 30%、淨毛利反而更高，是<b>現在最聰明的槓桿</b>。</li>
+          <li>排序：<b>定價止血 → 收割既有用戶年訂 → 蝦皮組合包 → 廣告養再行銷池 → 保險下一季</b>。保險本月落不了地，別硬塞進衝刺。</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 4 順序 -->
-<section>
+<!-- SEQUENCING -->
+<section id="plan">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">04</span><h2>做事的順序：先顧地基，再踩油門</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>該動手的順序</h2></div>
+    <p class="lead">五個視角收斂成一條執行線。先止血、再收割、最後鋪飛輪。</p>
     <div class="steps">
-      <div class="step"><div><h4>把定價講清楚</h4><p>折扣標示對得上實際金額、幣別標清楚。這是信任的底線，最優先。</p></div></div>
-      <div class="step"><div><h4>確認每個方案都賺錢</h4><p>把每個方案的成本算清楚，確定不會越賣越虧。這是成長的綠燈條件。</p></div></div>
-      <div class="step"><div><h4>把忠實顧客顧好</h4><p>用誠實、有感的年訂方案，照顧已經喜歡我們的人。</p></div></div>
-      <div class="step"><div><h4>把數據×合作變主線</h4><p>把寵物健康數據與保險、獸醫的合作，放進核心路線圖——這才是真正的天花板。</p></div></div>
+      <div class="step"><div><h4>定價止血</h4><div class="when">本週 · 合規優先</div><p>修掉「省 39%」假標、標清 NT$ 幣別、補上真實的年訂限時折扣。這是法律與信任的底線，零成本、最高優先。</p></div></div>
+      <div class="step"><div><h4>算出每方案毛利</h4><div class="when">本週 · 決策前提</div><p>拉出每個方案在「平均用量 / 重度用量」下的 AI COGS，確認毛利為正。這是所有成長動作的綠燈條件。</p></div></div>
+      <div class="step"><div><h4>收割既有用戶年訂</h4><div class="when">衝刺月 · 主引擎</div><p>對既有付費＋高意願免費用戶，推真折扣年訂（當下扣款、無試用時間差）。這是單月現金的命門。</p></div></div>
+      <div class="step"><div><h4>蝦皮年卡組合包</h4><div class="when">衝刺月 · 高毛利</div><p>主推年訂序號＋實體卡＋贈品，客單拉到 2,290 / 3,590，毛利還比 App 內購好。北極星＝核銷率。</p></div></div>
+      <div class="step"><div><h4>廣告養再行銷池</h4><div class="when">衝刺月 · 放大器</div><p>NT$40,000 測試上限，先優化「加購／名單」、再放大贏家素材。任務是養池與找素材，不是扛 500K。</p></div></div>
+      <div class="step"><div><h4>啟動數據×保險飛輪</h4><div class="when">下一季 · 真正的上限</div><p>把保險 B2B2C 與數據平台放進核心路線圖。爭取首年保費分潤 15–20%＋數據對價，做成經常性收入。</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- 5 小辭典 -->
-<section style="border-bottom:none">
+<!-- NUMBERS WE NEED -->
+<section id="need" style="border-bottom:none;">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">05</span><h2>小辭典：把術語翻成人話</h2></div>
-    <div class="gloss">
-      <div class="g"><b>每賣一單賺不賺</b><p>賣出一個方案，扣掉服務這個客人的成本後，到底還剩多少。剩正的才是真的賺。</p></div>
-      <div class="g"><b>訂閱的成本</b><p>每次 AI 掃描、諮詢、整理，背後都有運算費用。用越多、成本越高，所以要先算清楚。</p></div>
-      <div class="g"><b>回頭率 / 流失率</b><p>客人續訂或退訂的比例。訂閱生意的命脈，比單月業績更重要。</p></div>
-      <div class="g"><b>護城河</b><p>別人短時間複製不了的優勢。我們的護城河，是長期累積的寵物健康數據。</p></div>
+    <div class="need">
+      <div class="label">在這之前，一切都是估計</div>
+      <h3>三個決定生死的數字</h3>
+      <div class="need-grid">
+        <div class="n"><b>01</b><span>每個方案扣掉 AI 成本後的<b style="color:#fff;font-size:15px;display:inline;"> 毛利</b>。決定「能不能擴張」。</span></div>
+        <div class="n"><b>02</b><span>1,000 活躍用戶的<b style="color:#fff;font-size:15px;display:inline;"> 付費 / 免費比 與 MRR</b>。決定「125 筆年訂是踮腳還是搆不到」。</span></div>
+        <div class="n"><b>03</b><span>月<b style="color:#fff;font-size:15px;display:inline;"> 流失率 churn</b>。決定「衝刺是創造價值還是提前燒掉未來」。</span></div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="label">關於這頁</div>
-    <p style="max-width:720px">這是一份用一般人語言寫的商業模式說明，幫助團隊與夥伴快速理解 Pawtient 的價值與方向。內容為策略方向，非財務承諾。</p>
-    <p style="margin-top:16px;color:var(--ink)">Pawtient AI · 通用創新有限公司 · 2026</p>
+    <div class="label">附註與限制</div>
+    <p class="disc">本報告基於目前已知資訊（App 內定價截圖、~1,000 活躍用戶、64 血檢參數 / 21 紀錄類型 / 9 語言、蝦皮與保險通路規劃）所做的策略判斷，部分數字（COGS、churn、付費比、ASP）為合理假設，需以實際財務數據校正後才能從「目標」升級為「預測」。五位人物之觀點為基於其公開方法論的角色化建議，非其本人言論。</p>
+    <p style="margin-top:20px;color:var(--ink);">Pawtient AI · 商業模型體檢 · 顧問機密 · 2026.06</p>
   </div>
 </footer>
 
